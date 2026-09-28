@@ -1,51 +1,62 @@
 /* =========================================================
    WINDOWS TITLEBAR CONTROLS
-   Simplified for Windows
+   Simplified + native Windows icons
    ========================================================= */
 
 
-/* ---------------------------------------------------------
-   Vertical-tabs / right-side sidebar positioning
-   --------------------------------------------------------- */
+/* =========================================================
+   VERTICAL TABS / RIGHT SIDEBAR
+   ========================================================= */
 
 @media -moz-pref("zen.tabs.vertical") {
+
   :root:not([zen-window-buttons-reversed="true"]) {
+
     &:root[zen-right-side="true"]
     #zen-sidebar-top-buttons
     .titlebar-buttonbox-container {
+
       margin-right: calc(-1 * var(--zen-toolbox-padding));
-      margin-top: 0px !important;
+      margin-top: 0 !important;
       height: calc(4px + var(--zen-toolbar-height)) !important;
     }
   }
 }
 
 
-/* ---------------------------------------------------------
-   Titlebar button group
-   --------------------------------------------------------- */
+/* =========================================================
+   BUTTON GROUP
+   ========================================================= */
 
 .titlebar-buttonbox {
   margin-right: -2px !important;
   margin-left: -4px !important;
+
+  /* Keep original vertical positioning */
   margin-top: 0.5px !important;
 
-  scale: 0.85 !important;
+  /* DO NOT shrink native Windows buttons */
+  scale: 1 !important;
+
   gap: 5px !important;
 
   align-items: center !important;
 }
 
 
-/* ---------------------------------------------------------
-   Individual Windows buttons
-   --------------------------------------------------------- */
+/* =========================================================
+   INDIVIDUAL BUTTONS
+   ========================================================= */
 
 .titlebar-button {
+
   padding: 0 !important;
 
   min-width: 16px !important;
   min-height: 16px !important;
+
+  width: 16px !important;
+  height: 16px !important;
 
   margin-right: 5px !important;
 
@@ -54,59 +65,157 @@
   border: 0 !important;
   border-radius: 0 !important;
 
-  background: transparent !important;
+  background-color: transparent !important;
 
-  transition: background-color 100ms ease !important;
+  /*
+   * Keep the smooth hover animation from the original CSS.
+   */
+  transition:
+    background-color 100ms ease,
+    transform 100ms ease,
+    opacity 100ms ease !important;
 }
 
 
-/* ---------------------------------------------------------
-   Keep native Windows icons
-   --------------------------------------------------------- */
+/* =========================================================
+   NATIVE WINDOWS ICON
+   ========================================================= */
 
 .titlebar-button > image {
+
   visibility: visible !important;
+  opacity: 1 !important;
+
+  width: 16px !important;
+  height: 16px !important;
+
+  /*
+   * THIS is the vertical alignment adjustment.
+   *
+   * Previous attempts moved the container/pseudo-element.
+   * The actual native Windows icon is the <image>.
+   */
+  transform: translateY(2px) !important;
+
+  transition:
+    transform 100ms ease,
+    opacity 100ms ease !important;
+}
+
+
+/* =========================================================
+   HOVER ANIMATION
+   ========================================================= */
+
+/*
+ * Give the native buttons an actual animated hover state.
+ * The original Wireframe CSS used 100ms transitions.
+ */
+
+.titlebar-button:hover {
+
+  background-color: var(--toolbarbutton-hover-background) !important;
+
+  transition:
+    background-color 100ms ease,
+    transform 100ms ease,
+    opacity 100ms ease !important;
+}
+
+
+/*
+ * Slight icon movement on hover.
+ * This gives the controls back a visible animated response
+ * without replacing the native Windows icons.
+ */
+
+.titlebar-button:hover > image {
+
+  transform: translateY(2px) scale(1.08) !important;
+
   opacity: 1 !important;
 }
 
 
-/* ---------------------------------------------------------
-   Remove Wireframe/macOS pseudo-icons
-   --------------------------------------------------------- */
+/* =========================================================
+   CLOSE BUTTON
+   ========================================================= */
 
-.titlebar-button::after {
-  content: none !important;
-  background-image: none !important;
+/*
+ * Windows normally gives Close a stronger hover indication.
+ * Keep it subtle rather than using the old macOS red circle.
+ */
+
+.titlebar-close:hover {
+
+  background-color: #c42b1c !important;
+
+  transition:
+    background-color 100ms ease !important;
 }
 
 
-/* ---------------------------------------------------------
-   Remove macOS traffic-light backgrounds
-   --------------------------------------------------------- */
+/* =========================================================
+   MINIMIZE BUTTON
+   ========================================================= */
+
+.titlebar-min:hover {
+
+  background-color: var(--toolbarbutton-hover-background) !important;
+
+}
+
+
+/* =========================================================
+   MAXIMIZE / RESTORE BUTTON
+   ========================================================= */
+
+.titlebar-max:hover,
+.titlebar-restore:hover {
+
+  background-color: var(--toolbarbutton-hover-background) !important;
+
+}
+
+
+/* =========================================================
+   REMOVE OLD WIREFRAME SVG CONTROLS
+   ========================================================= */
+
+/*
+ * The original CSS creates its own SVG icons through ::after.
+ * We don't need those because we're using Zen's native
+ * Windows <image> icons.
+ */
+
+.titlebar-button::after {
+
+  content: none !important;
+
+  background-image: none !important;
+
+  opacity: 0 !important;
+}
+
+
+/* =========================================================
+   REMOVE MACOS TRAFFIC-LIGHT STYLING
+   ========================================================= */
 
 .titlebar-min,
 .titlebar-max,
 .titlebar-restore,
 .titlebar-close {
-  background: transparent !important;
+
   background-image: none !important;
 
   border: 0 !important;
 }
 
 
-/* ---------------------------------------------------------
-   Windows-style hover
-   --------------------------------------------------------- */
-
-.titlebar-button:hover {
-  background: var(--toolbarbutton-hover-background) !important;
-}
-
-
-/* ---------------------------------------------------------
-   Normal button order
-   --------------------------------------------------------- */
+/* =========================================================
+   NORMAL BUTTON ORDER
+   ========================================================= */
 
 @media not (-moz-bool-pref: "wireframe.controls.reverse") {
 
@@ -119,36 +228,39 @@
   }
 
   .titlebar-buttonbox-container {
+
     order: -1 !important;
+
     margin-left: 8px !important;
   }
 
   .titlebar-min,
   .titlebar-max,
   .titlebar-close {
+
     margin-right: 5px !important;
   }
 }
 
 
-/* ---------------------------------------------------------
-   Reversed button order
-   --------------------------------------------------------- */
+/* =========================================================
+   REVERSED BUTTON ORDER
+   ========================================================= */
 
 @media (-moz-bool-pref: "wireframe.controls.reverse") {
 
   .titlebar-min,
   .titlebar-max,
   .titlebar-close {
+
     margin-right: 5px !important;
   }
-
 }
 
 
-/* ---------------------------------------------------------
-   Reverse mode positioning
-   --------------------------------------------------------- */
+/* =========================================================
+   REVERSE MODE POSITIONING
+   ========================================================= */
 
 @media (-moz-bool-pref: "wireframe.macos.controls") {
 
@@ -161,35 +273,35 @@
     #zen-appcontent-navbar-container {
       margin-right: 0 !important;
     }
-
   }
 }
 
 
-/* ---------------------------------------------------------
-   Top URL bar + sidebar alignment
-   --------------------------------------------------------- */
+/* =========================================================
+   TOP URL BAR / SIDEBAR
+   ========================================================= */
 
 @media not (-moz-pref("zen.view.use-single-toolbar")) {
 
   @media (-moz-bool-pref: "wireframe.urlbar.position.top") {
 
     #zen-sidebar-top-buttons {
-      margin-top: -4px !important;
-    }
 
+      margin-top: -4px !important;
+
+    }
   }
 }
 
 
 /* =========================================================
-   FINAL ALIGNMENT
+   FINAL VERTICAL ALIGNMENT
    ========================================================= */
 
 /*
-   Keep the button group vertically centered instead of
-   applying arbitrary transforms to the individual icons.
-*/
+ * Keep the container centered.
+ * The actual icon is moved independently above.
+ */
 
 .titlebar-buttonbox-container {
   align-self: center !important;
