@@ -3,15 +3,18 @@
    ========================================================= */
 
 
-/* ---------------------------------------------------------
-   Vertical tabs / right-side sidebar
-   --------------------------------------------------------- */
+/* =========================================================
+   VERTICAL TABS / RIGHT SIDEBAR
+   ========================================================= */
 
 @media -moz-pref("zen.tabs.vertical") {
+
   :root:not([zen-window-buttons-reversed="true"]) {
+
     &:root[zen-right-side="true"]
     #zen-sidebar-top-buttons
     .titlebar-buttonbox-container {
+
       margin-right: calc(-1 * var(--zen-toolbox-padding));
       margin-top: 0 !important;
       height: calc(4px + var(--zen-toolbar-height)) !important;
@@ -21,23 +24,19 @@
 
 
 /* =========================================================
-   TITLEBAR BUTTON BOX
+   WINDOWS BUTTON GROUP
    ========================================================= */
 
 .titlebar-buttonbox {
+
   margin-right: -2px !important;
   margin-left: -4px !important;
 
-  /*
-   * Move the COMPLETE group downward.
-   * This is the actual element shown in Browser Toolbox.
-   */
+  /* This is the alignment that we confirmed in Browser Toolbox */
   position: relative !important;
   top: 7px !important;
 
-  /*
-   * Native Windows buttons must remain full size.
-   */
+  /* DO NOT shrink native Windows controls */
   scale: 1 !important;
 
   gap: 5px !important;
@@ -47,27 +46,33 @@
 
 
 /* =========================================================
-   INDIVIDUAL WINDOWS BUTTONS
+   NATIVE WINDOWS BUTTONS
    ========================================================= */
 
 .titlebar-button {
-  padding: 0 !important;
 
-  min-width: 16px !important;
-  min-height: 16px !important;
+  /*
+   * Restore normal native Firefox/Windows button padding.
+   * The previous padding: 0 was what made them tiny/narrow.
+   */
+  padding: 8px 18px !important;
 
-  margin-right: 5px !important;
+  min-width: unset !important;
+  min-height: unset !important;
+
+  margin-right: 0 !important;
 
   align-self: center !important;
 
   border: 0 !important;
   border-radius: 0 !important;
 
+  background: transparent !important;
+
   /*
-   * IMPORTANT:
-   * Don't override the native background/icon rendering.
-   * Zen handles the hover appearance.
+   * Keep Zen's native hover animation.
    */
+  transition: all 100ms !important;
 }
 
 
@@ -76,19 +81,45 @@
    ========================================================= */
 
 /*
- * Do NOT hide the native image.
+ * Let Zen/Firefox render the actual Windows icon.
  */
+
 .titlebar-button > image {
   visibility: visible !important;
 }
 
 
+/*
+ * The current Zen button rendering uses ::before.
+ * Do NOT move or scale the icon independently.
+ */
+
+.titlebar-button::before {
+  transform: none !important;
+}
+
+
 /* =========================================================
-   DO NOT USE THE OLD WIREFRAME SVG ICONS
+   REMOVE WIREFRAME SVG CONTROLS
    ========================================================= */
 
 .titlebar-button::after {
+
   content: none !important;
+
+  background-image: none !important;
+
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.titlebar-button:hover {
+
+  transition: all 100ms !important;
+
 }
 
 
@@ -107,14 +138,10 @@
   }
 
   .titlebar-buttonbox-container {
-    order: -1 !important;
-    margin-left: 8px !important;
-  }
 
-  .titlebar-min,
-  .titlebar-max,
-  .titlebar-close {
-    margin-right: 5px !important;
+    order: -1 !important;
+
+    margin-left: 8px !important;
   }
 }
 
@@ -128,6 +155,7 @@
   .titlebar-min,
   .titlebar-max,
   .titlebar-close {
+
     margin-right: 5px !important;
   }
 }
@@ -158,10 +186,48 @@
 
 @media not (-moz-pref("zen.view.use-single-toolbar")) {
 
-  @media (-moz-bool-pref: "wireframe.urlbar.position.top") {
+  @media (-moz-bool-pref("wireframe.urlbar.position.top")) {
 
     #zen-sidebar-top-buttons {
+
       margin-top: -4px !important;
+
     }
   }
+}
+
+
+/* =========================================================
+   COMPACT-MODE / TOP SIDEBAR BUTTON
+   ========================================================= */
+
+/*
+ * The Browser Toolbox shows the compact/sidebar button as
+ *
+ *     button.toolbarbutton-1
+ *
+ * inside:
+ *
+ *     #zen-sidebar-top-buttons-customization-target
+ *
+ * Move that button downward without moving the entire
+ * sidebar/top-button container.
+ */
+
+#zen-sidebar-top-buttons-customization-target
+.toolbarbutton-1 {
+
+  position: relative !important;
+
+  top: 4px !important;
+}
+
+
+/* =========================================================
+   KEEP TOP BUTTON CONTAINER INTACT
+   ========================================================= */
+
+#zen-sidebar-top-buttons-customization-target {
+
+  align-items: center !important;
 }
