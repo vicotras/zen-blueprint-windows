@@ -1,141 +1,20 @@
 /* =========================================================
-   WIREframe Windows Controls
-   Windows-native controls
+   WINDOWS CONTROLS — NATIVE RESET
    ========================================================= */
 
+/*
+   This mod should NOT reposition, resize, recolor, replace,
+   or animate the Windows minimize/maximize/close buttons.
 
-/* =========================================================
-   WINDOWS CONTROLS
-   ========================================================= */
+   Zen/Firefox handles all of that natively.
+*/
 
+
+/* Keep the native Windows buttons visible */
 @media not (-moz-bool-pref: "wireframe.macos.controls") {
 
-  /* -------------------------------------------------------
-     Vertical tabs / right-side sidebar
-     ------------------------------------------------------- */
-
-  @media -moz-pref("zen.tabs.vertical") {
-
-    :root:not([zen-window-buttons-reversed="true"]) {
-
-      &:root[zen-right-side="true"]
-      #zen-sidebar-top-buttons
-      .titlebar-buttonbox-container {
-
-        margin-right: calc(-1 * var(--zen-toolbox-padding));
-        margin-top: 0px !important;
-        height: calc(4px + var(--zen-toolbar-height)) !important;
-      }
-    }
-  }
-
-
-  /* =======================================================
-     WINDOWS BUTTON GROUP
-     ======================================================= */
-
-  .titlebar-buttonbox {
-
-    /*
-     * IMPORTANT:
-     * Do not modify the individual buttons.
-     * Only position the whole group.
-     */
-
-    position: relative !important;
-
-    margin-right: -2px !important;
-    margin-left: -4px !important;
-
-    gap: 5px !important;
-
-    scale: 1 !important;
-
-    transform: none !important;
-
-    align-items: center !important;
-
-    /*
-     * Normal/non-compact position
-     */
-    top: 0px !important;
-  }
-
-
-  /* =======================================================
-     NATIVE WINDOWS BUTTONS
-     
-     Leave Firefox/Zen's native rendering alone.
-     ======================================================= */
-
   .titlebar-button {
-
-    /*
-     * Restore the native Windows button hitbox.
-     * This is what prevents the buttons becoming narrow.
-     */
-    padding: 8px 18px !important;
-
-    min-width: unset !important;
-    min-height: unset !important;
-
-    align-self: center !important;
-
-    margin-right: 0px !important;
-
-    border-radius: 0px !important;
-
-    /*
-     * Do not replace the native hover animation.
-     */
-    transition: revert !important;
-  }
-
-
-  /* =======================================================
-     COMPACT MODE
-     
-     Compact Mode changes the position of the titlebar
-     controls. Move the WHOLE group down rather than
-     manipulating the individual buttons.
-     ======================================================= */
-
-  :root[zen-compact-mode="true"] {
-
-    .titlebar-buttonbox-container {
-      position: relative !important;
-      top: 10px !important;
-    }
-
-    .titlebar-buttonbox {
-      top: 0px !important;
-    }
-  }
-
-
-  /* =======================================================
-     COMPACT MODE / SIDEBAR BUTTON
-     ======================================================= */
-
-  #zen-sidebar-top-buttons-customization-target {
-    align-items: center !important;
-  }
-
-
-  /* Normal mode */
-  #zen-sidebar-top-buttons-customization-target
-  .toolbarbutton-1 {
-    position: relative !important;
-    top: 0px !important;
-  }
-
-
-  /* Compact mode */
-  :root[zen-compact-mode="true"]
-  #zen-sidebar-top-buttons-customization-target
-  .toolbarbutton-1 {
-    position: relative !important;
-    top: 10px !important;
+    -moz-appearance: none !important;
   }
 
 }
@@ -145,19 +24,20 @@
    BUTTON ORDER
    ========================================================= */
 
+/*
+   Keep the repo's original Windows button ordering behavior,
+   but don't alter their dimensions or vertical position.
+*/
+
 @media not (-moz-bool-pref: "wireframe.controls.reverse") {
 
   @media not (-moz-bool-pref: "wireframe.macos.controls") {
 
-    .titlebar-min,
-    .titlebar-max,
     .titlebar-close {
-      margin-right: 5px !important;
+      content: none !important;
     }
   }
 
-
-  /* Close → Minimize → Maximize */
   .titlebar-close {
     order: -1 !important;
   }
@@ -165,18 +45,11 @@
   .titlebar-min {
     order: 1 !important;
   }
-
-
-  /* Windows control group */
-  .titlebar-buttonbox-container {
-    order: -1 !important;
-    margin-left: 8px !important;
-  }
 }
 
 
 /* =========================================================
-   REVERSED BUTTON ORDER
+   REVERSED ORDER
    ========================================================= */
 
 @media (-moz-bool-pref: "wireframe.controls.reverse") {
@@ -206,21 +79,6 @@
 
     #zen-appcontent-navbar-container {
       margin-right: 0px !important;
-    }
-  }
-}
-
-
-/* =========================================================
-   TOP URLBAR / SIDEBAR BUTTON HEIGHT
-   ========================================================= */
-
-@media not (-moz-pref("zen.view.use-single-toolbar")) {
-
-  @media (-moz-bool-pref: "wireframe.urlbar.position.top") {
-
-    #zen-sidebar-top-buttons {
-      margin-top: -4px !important;
     }
   }
 }
