@@ -36,3 +36,11 @@
 #urlbar .urlbar-input {
   text-align: left !important;
 }
+
+/* === KEEP URLBAR FIXED ON HOVER === */
+#urlbar:hover {
+  transform: none !important;
+  translate: none !important;
+  top: auto !important;
+  bottom: auto !important;
+}
