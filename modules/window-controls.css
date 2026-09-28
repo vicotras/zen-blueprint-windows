@@ -1,21 +1,17 @@
 /* =========================================================
    WINDOWS TITLEBAR CONTROLS
-   Simplified + native Windows icons
    ========================================================= */
 
 
-/* =========================================================
-   VERTICAL TABS / RIGHT SIDEBAR
-   ========================================================= */
+/* ---------------------------------------------------------
+   Vertical tabs / right-side sidebar
+   --------------------------------------------------------- */
 
 @media -moz-pref("zen.tabs.vertical") {
-
   :root:not([zen-window-buttons-reversed="true"]) {
-
     &:root[zen-right-side="true"]
     #zen-sidebar-top-buttons
     .titlebar-buttonbox-container {
-
       margin-right: calc(-1 * var(--zen-toolbox-padding));
       margin-top: 0 !important;
       height: calc(4px + var(--zen-toolbar-height)) !important;
@@ -24,18 +20,16 @@
 }
 
 
-/* =========================================================
-   BUTTON GROUP
-   ========================================================= */
+/* ---------------------------------------------------------
+   BUTTON CONTAINER
+   --------------------------------------------------------- */
 
 .titlebar-buttonbox {
   margin-right: -2px !important;
   margin-left: -4px !important;
-
-  /* Keep original vertical positioning */
   margin-top: 0.5px !important;
 
-  /* DO NOT shrink native Windows buttons */
+  /* Native Windows buttons */
   scale: 1 !important;
 
   gap: 5px !important;
@@ -44,12 +38,11 @@
 }
 
 
-/* =========================================================
-   INDIVIDUAL BUTTONS
-   ========================================================= */
+/* ---------------------------------------------------------
+   BUTTONS
+   --------------------------------------------------------- */
 
 .titlebar-button {
-
   padding: 0 !important;
 
   min-width: 16px !important;
@@ -65,36 +58,34 @@
   border: 0 !important;
   border-radius: 0 !important;
 
-  background-color: transparent !important;
+  background: transparent !important;
 
-  /*
-   * Keep the smooth hover animation from the original CSS.
-   */
   transition:
     background-color 100ms ease,
-    transform 100ms ease,
     opacity 100ms ease !important;
 }
 
 
 /* =========================================================
-   NATIVE WINDOWS ICON
+   ACTUAL WINDOWS ICON
    ========================================================= */
 
-.titlebar-button > image {
+/*
+   IMPORTANT:
+   Zen renders the Windows minimize/maximize/restore/close
+   icons through ::before.
 
-  visibility: visible !important;
-  opacity: 1 !important;
+   This is the element shown in Browser Toolbox as:
 
-  width: 16px !important;
-  height: 16px !important;
+       Flex Items
+          ::before
 
-  /*
-   * THIS is the vertical alignment adjustment.
-   *
-   * Previous attempts moved the container/pseudo-element.
-   * The actual native Windows icon is the <image>.
-   */
+   NOT > image.
+*/
+
+.titlebar-button::before {
+
+  /* Vertical alignment */
   transform: translateY(2px) !important;
 
   transition:
@@ -103,90 +94,52 @@
 }
 
 
-/* =========================================================
+/* ---------------------------------------------------------
    HOVER ANIMATION
-   ========================================================= */
+   --------------------------------------------------------- */
 
-/*
- * Give the native buttons an actual animated hover state.
- * The original Wireframe CSS used 100ms transitions.
- */
+.titlebar-button:hover::before {
+
+  transform: translateY(2px) scale(1.08) !important;
+
+  opacity: 1 !important;
+
+}
+
+
+/* ---------------------------------------------------------
+   BUTTON HOVER
+   --------------------------------------------------------- */
 
 .titlebar-button:hover {
 
   background-color: var(--toolbarbutton-hover-background) !important;
 
-  transition:
-    background-color 100ms ease,
-    transform 100ms ease,
-    opacity 100ms ease !important;
 }
 
 
-/*
- * Slight icon movement on hover.
- * This gives the controls back a visible animated response
- * without replacing the native Windows icons.
- */
-
-.titlebar-button:hover > image {
-
-  transform: translateY(2px) scale(1.08) !important;
-
-  opacity: 1 !important;
-}
-
-
-/* =========================================================
+/* ---------------------------------------------------------
    CLOSE BUTTON
-   ========================================================= */
-
-/*
- * Windows normally gives Close a stronger hover indication.
- * Keep it subtle rather than using the old macOS red circle.
- */
+   --------------------------------------------------------- */
 
 .titlebar-close:hover {
 
   background-color: #c42b1c !important;
 
-  transition:
-    background-color 100ms ease !important;
 }
 
 
 /* =========================================================
-   MINIMIZE BUTTON
-   ========================================================= */
-
-.titlebar-min:hover {
-
-  background-color: var(--toolbarbutton-hover-background) !important;
-
-}
-
-
-/* =========================================================
-   MAXIMIZE / RESTORE BUTTON
-   ========================================================= */
-
-.titlebar-max:hover,
-.titlebar-restore:hover {
-
-  background-color: var(--toolbarbutton-hover-background) !important;
-
-}
-
-
-/* =========================================================
-   REMOVE OLD WIREFRAME SVG CONTROLS
+   REMOVE OLD WIREFRAME SVG SYSTEM
    ========================================================= */
 
 /*
- * The original CSS creates its own SVG icons through ::after.
- * We don't need those because we're using Zen's native
- * Windows <image> icons.
- */
+   The original Wireframe file creates its own macOS-style
+   icons using ::after.
+
+   We don't need those because Zen itself provides the
+   native Windows icons through ::before.
+*/
 
 .titlebar-button::after {
 
@@ -194,13 +147,12 @@
 
   background-image: none !important;
 
-  opacity: 0 !important;
 }
 
 
-/* =========================================================
-   REMOVE MACOS TRAFFIC-LIGHT STYLING
-   ========================================================= */
+/* ---------------------------------------------------------
+   Remove old traffic-light backgrounds
+   --------------------------------------------------------- */
 
 .titlebar-min,
 .titlebar-max,
@@ -210,6 +162,7 @@
   background-image: none !important;
 
   border: 0 !important;
+
 }
 
 
@@ -228,16 +181,13 @@
   }
 
   .titlebar-buttonbox-container {
-
     order: -1 !important;
-
     margin-left: 8px !important;
   }
 
   .titlebar-min,
   .titlebar-max,
   .titlebar-close {
-
     margin-right: 5px !important;
   }
 }
@@ -252,14 +202,14 @@
   .titlebar-min,
   .titlebar-max,
   .titlebar-close {
-
     margin-right: 5px !important;
   }
+
 }
 
 
 /* =========================================================
-   REVERSE MODE POSITIONING
+   REVERSE MODE
    ========================================================= */
 
 @media (-moz-bool-pref: "wireframe.macos.controls") {
@@ -273,6 +223,7 @@
     #zen-appcontent-navbar-container {
       margin-right: 0 !important;
     }
+
   }
 }
 
@@ -286,22 +237,16 @@
   @media (-moz-bool-pref: "wireframe.urlbar.position.top") {
 
     #zen-sidebar-top-buttons {
-
       margin-top: -4px !important;
-
     }
+
   }
 }
 
 
 /* =========================================================
-   FINAL VERTICAL ALIGNMENT
+   FINAL CENTERING
    ========================================================= */
-
-/*
- * Keep the container centered.
- * The actual icon is moved independently above.
- */
 
 .titlebar-buttonbox-container {
   align-self: center !important;
