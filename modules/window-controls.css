@@ -221,9 +221,8 @@
   }
 }
 
-/* TEST: move Windows controls down visibly */
+/* Fix vertical alignment of Wireframe Windows controls */
 
-#zen-sidebar-top-buttons .titlebar-buttonbox-container,
-#zen-appcontent-navbar-container .titlebar-buttonbox-container {
-    transform: translateY(8px) !important;
+.titlebar-button::after {
+    top: 2px !important;
 }
