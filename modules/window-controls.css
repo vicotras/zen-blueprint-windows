@@ -15,12 +15,12 @@
   .titlebar-buttonbox {
     margin-right: -2px !important;
     margin-left: -4px !important;
-    margin-top: 0.5px !important;
+    margin-top: 4px !important;
     scale: 0.85 !important;
-    transform: translate(0px,0px) !important;
+    transform: translate(0px, 0px) !important;
     gap: 5px !important;
-  }
-
+}
+  
   .titlebar-button {
     padding: 0px !important;
     min-height: 16px !important;
