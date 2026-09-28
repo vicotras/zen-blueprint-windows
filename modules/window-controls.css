@@ -20,16 +20,24 @@
 }
 
 
-/* ---------------------------------------------------------
-   BUTTON CONTAINER
-   --------------------------------------------------------- */
+/* =========================================================
+   TITLEBAR BUTTON BOX
+   ========================================================= */
 
 .titlebar-buttonbox {
   margin-right: -2px !important;
   margin-left: -4px !important;
-  margin-top: 0.5px !important;
 
-  /* Native Windows buttons */
+  /*
+   * Move the COMPLETE group downward.
+   * This is the actual element shown in Browser Toolbox.
+   */
+  position: relative !important;
+  top: 7px !important;
+
+  /*
+   * Native Windows buttons must remain full size.
+   */
   scale: 1 !important;
 
   gap: 5px !important;
@@ -38,18 +46,15 @@
 }
 
 
-/* ---------------------------------------------------------
-   BUTTONS
-   --------------------------------------------------------- */
+/* =========================================================
+   INDIVIDUAL WINDOWS BUTTONS
+   ========================================================= */
 
 .titlebar-button {
   padding: 0 !important;
 
   min-width: 16px !important;
   min-height: 16px !important;
-
-  width: 16px !important;
-  height: 16px !important;
 
   margin-right: 5px !important;
 
@@ -58,111 +63,32 @@
   border: 0 !important;
   border-radius: 0 !important;
 
-  background: transparent !important;
-
-  transition:
-    background-color 100ms ease,
-    opacity 100ms ease !important;
+  /*
+   * IMPORTANT:
+   * Don't override the native background/icon rendering.
+   * Zen handles the hover appearance.
+   */
 }
 
 
 /* =========================================================
-   ACTUAL WINDOWS ICON
+   NATIVE WINDOWS ICONS
    ========================================================= */
 
 /*
-   IMPORTANT:
-   Zen renders the Windows minimize/maximize/restore/close
-   icons through ::before.
-
-   This is the element shown in Browser Toolbox as:
-
-       Flex Items
-          ::before
-
-   NOT > image.
-*/
-
-.titlebar-button::before {
-
-  /* Vertical alignment */
-  transform: translateY(2px) !important;
-
-  transition:
-    transform 100ms ease,
-    opacity 100ms ease !important;
-}
-
-
-/* ---------------------------------------------------------
-   HOVER ANIMATION
-   --------------------------------------------------------- */
-
-.titlebar-button:hover::before {
-
-  transform: translateY(2px) scale(1.08) !important;
-
-  opacity: 1 !important;
-
-}
-
-
-/* ---------------------------------------------------------
-   BUTTON HOVER
-   --------------------------------------------------------- */
-
-.titlebar-button:hover {
-
-  background-color: var(--toolbarbutton-hover-background) !important;
-
-}
-
-
-/* ---------------------------------------------------------
-   CLOSE BUTTON
-   --------------------------------------------------------- */
-
-.titlebar-close:hover {
-
-  background-color: #c42b1c !important;
-
+ * Do NOT hide the native image.
+ */
+.titlebar-button > image {
+  visibility: visible !important;
 }
 
 
 /* =========================================================
-   REMOVE OLD WIREFRAME SVG SYSTEM
+   DO NOT USE THE OLD WIREFRAME SVG ICONS
    ========================================================= */
-
-/*
-   The original Wireframe file creates its own macOS-style
-   icons using ::after.
-
-   We don't need those because Zen itself provides the
-   native Windows icons through ::before.
-*/
 
 .titlebar-button::after {
-
   content: none !important;
-
-  background-image: none !important;
-
-}
-
-
-/* ---------------------------------------------------------
-   Remove old traffic-light backgrounds
-   --------------------------------------------------------- */
-
-.titlebar-min,
-.titlebar-max,
-.titlebar-restore,
-.titlebar-close {
-
-  background-image: none !important;
-
-  border: 0 !important;
-
 }
 
 
@@ -204,7 +130,6 @@
   .titlebar-close {
     margin-right: 5px !important;
   }
-
 }
 
 
@@ -223,7 +148,6 @@
     #zen-appcontent-navbar-container {
       margin-right: 0 !important;
     }
-
   }
 }
 
@@ -239,19 +163,5 @@
     #zen-sidebar-top-buttons {
       margin-top: -4px !important;
     }
-
   }
-}
-
-
-/* =========================================================
-   FINAL CENTERING
-   ========================================================= */
-
-.titlebar-buttonbox-container {
-  align-self: center !important;
-}
-
-.titlebar-buttonbox {
-  align-items: center !important;
 }
