@@ -221,8 +221,9 @@
   }
 }
 
-/* WINDOWS TITLEBAR ALIGNMENT */
+/* TEST: move Windows controls down visibly */
 
-#zen-sidebar-top-buttons .titlebar-buttonbox-container {
-    transform: translateY(-3px) !important;
+#zen-sidebar-top-buttons .titlebar-buttonbox-container,
+#zen-appcontent-navbar-container .titlebar-buttonbox-container {
+    transform: translateY(8px) !important;
 }
