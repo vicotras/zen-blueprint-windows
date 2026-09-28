@@ -50,8 +50,7 @@
 #urlbar:not([open]),
 #urlbar:not([open]) > .urlbar-background,
 #urlbar:not([open]) > .urlbar-input-container {
-  background: transparent !important;
-  background-color: transparent !important;
+  background: rgba(0, 0, 0, 0.28) !important;
   background-image: none !important;
   box-shadow: none !important;
   -moz-appearance: none !important;
