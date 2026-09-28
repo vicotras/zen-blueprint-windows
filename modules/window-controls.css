@@ -221,11 +221,8 @@
   }
 }
 
-/* =========================================================
-   WINDOWS TITLEBAR VERTICAL ALIGNMENT FIX
-   ========================================================= */
+/* WINDOWS TITLEBAR ALIGNMENT */
 
-.titlebar-buttonbox {
-    position: relative !important;
-    top: -1px !important;
+#zen-sidebar-top-buttons .titlebar-buttonbox-container {
+    transform: translateY(-3px) !important;
 }
