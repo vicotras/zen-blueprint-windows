@@ -67,51 +67,50 @@ body > hbox {
 
 @media (-moz-pref("wireframe.window.border", "macos")){
     :root[sizemode="normal"] #browser::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      border-radius: var(--na-window-border-radius) !important;
-      z-index: 9999;
-      transform: translateZ(0);
-      will-change: box-shadow, opacity;
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        border-radius: var(--na-window-border-radius) !important;
+        z-index: 9999;
+        transform: translateZ(0);
+        will-change: box-shadow, opacity;
 
-      box-shadow:
-        /* --- corner mask (prevents corner bleed) --- */
-        inset 0 0 0 1px light-dark(
-          rgba(255,255,255,0.14),
-          rgba(255,255,255,0.10)
-        ),
+        box-shadow:
+            /* --- corner mask (prevents corner bleed) --- */
+            inset 0 0 0 1px light-dark(
+                rgba(255,255,255,0.14),
+                rgba(255,255,255,0.10)
+            ),
 
-        /* --- curved metal highlight --- */
-        inset 0 0 0 2px light-dark(
-          rgba(255,255,255,0.32),
-          rgba(255,255,255,0.18)
-        ),
+            /* --- curved metal highlight --- */
+            inset 0 0 0 2px light-dark(
+                rgba(255,255,255,0.32),
+                rgba(255,255,255,0.18)
+            ),
 
-        /* --- inner soft falloff (curved depth) --- */
-        inset 0 0 10px 4px light-dark(
-          rgba(0,0,0,0.05),
-          rgba(255,255,255,0.07)
-        ),
+            /* --- inner soft falloff (curved depth) --- */
+            inset 0 0 10px 4px light-dark(
+                rgba(0,0,0,0.05),
+                rgba(255,255,255,0.07)
+            ),
 
-        /* --- machined outer rim --- */
-        0 0 0 2px light-dark(
-          rgba(0,0,0,0.27),
-          rgba(255,255,255,0.30)
-        ),
+            /* --- machined outer rim --- */
+            0 0 0 2px light-dark(
+                rgba(0,0,0,0.27),
+                rgba(255,255,255,0.30)
+            ),
 
-        /* --- outer structural ring --- */
-        0 3px 6px 1px light-dark(
-          rgba(0,0,0,0.08),
-          rgba(255,255,255,0.08)
-        ),
+            /* --- outer structural ring --- */
+            0 3px 6px 1px light-dark(
+                rgba(0,0,0,0.08),
+                rgba(255,255,255,0.08)
+            ),
 
-        /* --- diffused Sonoma glow --- */
-        0 0 32px 10px color-mix(in srgb, accentcolor 55%, transparent),
-        0 0 64px 26px color-mix(in srgb, accentcolor 40%, transparent),
-        0 0 110px 60px color-mix(in srgb, accentcolor 28%, transparent);
-
+            /* --- diffused Sonoma glow --- */
+            0 0 32px 10px color-mix(in srgb, accentcolor 55%, transparent),
+            0 0 64px 26px color-mix(in srgb, accentcolor 40%, transparent),
+            0 0 110px 60px color-mix(in srgb, accentcolor 28%, transparent);
     }
 }
 
@@ -213,38 +212,36 @@ body > hbox {
 
 @media (-moz-pref("wireframe.webview.border", "macos")) {
 
-  :root:not([zen-compact-mode="true"]):not([inDOMFullscreen="true"])
+    :root:not([zen-compact-mode="true"]):not([inDOMFullscreen="true"])
 
-  #zen-tabbox-wrapper::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      border-radius: var(--na-user-border-radius);
-      z-index: 9999;
+    #zen-tabbox-wrapper::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        border-radius: var(--na-user-border-radius);
+        z-index: 9999;
 
-      box-shadow:
-        /* --- micro corner mask (softened) --- */
-        inset 0 0 0 1px rgba(255,255,255,0.10),
+        box-shadow:
+            /* --- micro corner mask (softened) --- */
+            inset 0 0 0 1px rgba(255,255,255,0.10),
 
-        /* --- milky curved highlight (the secret sauce) --- */
-        inset 0 0 0 2px rgba(255,255,255,0.22),
+            /* --- milky curved highlight (the secret sauce) --- */
+            inset 0 0 0 2px rgba(255,255,255,0.22),
 
-        /* --- concave falloff (boosted softness) --- */
-        inset 0 0 12px 6px rgba(0,0,0,0.06),
+            /* --- concave falloff (boosted softness) --- */
+            inset 0 0 12px 6px rgba(0,0,0,0.06),
 
-        /* --- softened outer rim (less harsh) --- */
-        0 0 0 1px rgba(0,0,0,0.18),
+            /* --- softened outer rim (less harsh) --- */
+            0 0 0 1px rgba(0,0,0,0.18),
 
-        /* --- light spread glow (barely visible, creates “milkiness”) --- */
-        0 0 12px 5px rgba(255,255,255,0.10),
+            /* --- light spread glow (barely visible, creates “milkiness”) --- */
+            0 0 12px 5px rgba(255,255,255,0.10),
 
-        /* --- depth ring (slightly larger, softer) --- */
-        0 2px 5px rgba(0,0,0,0.08);
-  }
+            /* --- depth ring (slightly larger, softer) --- */
+            0 2px 5px rgba(0,0,0,0.08);
+    }
 }
-
-
 
 /* fix for overflowing borders when webview border is off */
 @media not (-moz-pref("wireframe.webview.border")){
@@ -338,19 +335,19 @@ body > hbox {
 /* ADD WEBVIEW BORDER RADIUS TO CHILDREN ELEMENTS OF TABBOX */
 :root:not([zen-compact-mode="true"]) {
 /*     @media not (-moz-pref("wireframe.nogaps.enabled")) { */
-        #tabbrowser-tabpanels {
-            border-radius: var(--na-user-border-radius) !important;
-        }
+    #tabbrowser-tabpanels {
+        border-radius: var(--na-user-border-radius) !important;
+    }
 
-        #tabbrowser-tabpanels > * {
-            border-radius: inherit !important;
-            transition: border-radius 0.18s linear !important;
-        }
+    #tabbrowser-tabpanels > * {
+        border-radius: inherit !important;
+        transition: border-radius 0.18s linear !important;
+    }
 /*     } */
 }
 
 :root:has([zen-compact-mode="true"]):has([sizemode="normal"])
-    ):has(#zen-appcontent-navbar-wrapper[zen-has-hover="false"]) {
+    :has(#zen-appcontent-navbar-wrapper[zen-has-hover="false"]) {
     #zen-tabbox-wrapper {
         border-radius: var(--na-window-border-radius) !important;
     }
@@ -409,14 +406,14 @@ body > hbox {
     /* TODO: ADD HIDE PREF FOR MULTI TOOLBAR TOPBAR !!! */
 
     /*   #zen-appcontent-navbar-wrapper {
-	  min-height: 0.1px !important;
-		height: 0.1px !important;
-    transition: 0.18s ease !important;
-	}
+        min-height: 0.1px !important;
+        height: 0.1px !important;
+        transition: 0.18s ease !important;
+    }
 
-	#zen-appcontent-navbar-wrapper[zen-has-hover="true"] {
-	  height: 34px !important;
-	} */
+    #zen-appcontent-navbar-wrapper[zen-has-hover="true"] {
+        height: 34px !important;
+    } */
 
     --zen-element-separation: 0px !important;
 
@@ -445,8 +442,8 @@ body > hbox {
 
 :root:not([zen-single-toolbar="true"])[zen-compact-mode="true"][sizemode="normal"] #browser,
 :root:not([zen-single-toolbar="true"])[zen-compact-mode="true"][sizemode="normal"] #main-window{
-  overflow: hidden !important;
-  clip-path: inset(0 round var(--na-window-border-radius));
+    overflow: hidden !important;
+    clip-path: inset(0 round var(--na-window-border-radius));
 }
 
 /* fix for corner bleeding in single toolbar compact mode */
@@ -475,7 +472,8 @@ body > hbox {
 
     @media (-moz-pref("wireframe.urlbar.position.top")) {
         #zen-appcontent-navbar-wrapper {
-            border-bottom: 2px solid var(--na-color-border) !important;
+            /* REMOVED: unwanted white separator under top URL bar */
+            border-bottom: none !important;
         }
     }
 }
@@ -517,7 +515,7 @@ body > hbox {
       /* --- machined outer rim --- */ 
       0 0 0 1px rgba(0,0,0,0.25), 
       /* --- outer structure ring / subtle glow --- */ 
-      0 2px 3px rgba(0,0,0,0.20)  
+      0 2px 3px rgba(255,255,255,0.20)  
   }
 }
 
@@ -554,8 +552,6 @@ body > hbox {
       /* --- corner mask: prevents edge halo bleeding --- */ 
       inset 0 0 0 1px rgba(255,255,255,0.22), 
       /* --- curved metal highlight (top + edges) --- */ 
-      inset 0 0 0 2px rgba(255,255,255,0.32), 
-      /* --- inner soft falloff depth --- */ 
       inset 0 0 4px 1.5px rgba(0,0,0,0.08), 
       /* --- machined outer rim --- */ 
       0 0 0 1px rgba(0,0,0,0.25), 
@@ -691,8 +687,6 @@ body > hbox {
         }
     }
 }
-
-
 
 /* fix for transparent blank page */
 .browserStack {
