@@ -1,63 +1,243 @@
 /* =========================================================
-   WIREFRAME WINDOWS
-   Native Windows titlebar controls
-   No macOS-style custom controls
+   WINDOWS NATIVE TITLEBAR CONTROLS
+   zen-wireframe-windows
    ========================================================= */
 
-/* Keep the native Windows controls, but don't apply
-   Wireframe's fake macOS styling to them. */
+/* ---------------------------------------------------------
+   Windows titlebar button positioning
+   --------------------------------------------------------- */
+
+@media -moz-pref("zen.tabs.vertical") {
+  :root:not([zen-window-buttons-reversed="true"]) {
+    &:root[zen-right-side="true"]
+    #zen-sidebar-top-buttons
+    .titlebar-buttonbox-container {
+      margin-right: calc(-1 * var(--zen-toolbox-padding));
+      margin-top: 0px !important;
+      height: calc(4px + var(--zen-toolbar-height)) !important;
+    }
+  }
+}
+
+
+/* ---------------------------------------------------------
+   Main button container
+   Keep the original sizing/positioning so compact mode
+   continues to work correctly.
+   --------------------------------------------------------- */
 
 .titlebar-buttonbox {
-    scale: 1 !important;
-    transform: none !important;
-    margin: 0 !important;
-    gap: 0 !important;
+  margin-right: -2px !important;
+  margin-left: -4px !important;
+  margin-top: 0.5px !important;
+
+  scale: 0.85 !important;
+  transform: translate(0px, 0px) !important;
+
+  gap: 5px !important;
 }
+
+
+/* ---------------------------------------------------------
+   Native Windows buttons
+   IMPORTANT:
+   - Do NOT hide the native <image>
+   - Do NOT replace the icons with SVG
+   - Do NOT give the buttons macOS traffic-light colors
+   --------------------------------------------------------- */
 
 .titlebar-button {
-    background: transparent !important;
-    border: 0 !important;
-    border-radius: 0 !important;
-    scale: 1 !important;
-    min-height: 0 !important;
-    min-width: 0 !important;
+  padding: 0px !important;
+
+  min-height: 16px !important;
+  min-width: 16px !important;
+
+  align-self: center;
+
+  margin-right: 5px !important;
+
+  border-radius: 0px !important;
+  border: 0px solid transparent !important;
+
+  transition:
+    background-color 100ms ease,
+    opacity 100ms ease !important;
 }
 
-/* Remove Wireframe's custom colored button decorations */
+
+/* ---------------------------------------------------------
+   Native icon
+   Explicitly keep Firefox/Zen's Windows icon visible.
+   --------------------------------------------------------- */
+
+.titlebar-button > image {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+
+/* ---------------------------------------------------------
+   Hover behavior
+   Let the native titlebar controls handle the actual
+   hover/click appearance.
+   --------------------------------------------------------- */
+
+.titlebar-button:hover {
+  transition:
+    background-color 100ms ease,
+    opacity 100ms ease !important;
+}
+
+
+/* ---------------------------------------------------------
+   Normal Windows button order
+   Preserve the fork's existing layout behavior.
+   --------------------------------------------------------- */
+
+@media not (-moz-bool-pref: "wireframe.controls.reverse") {
+
+  .titlebar-close {
+    order: -1 !important;
+  }
+
+  .titlebar-min {
+    order: 1 !important;
+  }
+
+  .titlebar-buttonbox-container {
+    order: -1 !important;
+    margin-left: 8px !important;
+  }
+
+  .titlebar-min,
+  .titlebar-max,
+  .titlebar-close {
+    margin-right: 5px !important;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   Reversed controls
+   --------------------------------------------------------- */
+
+@media (-moz-bool-pref: "wireframe.controls.reverse") {
+
+  .titlebar-min,
+  .titlebar-max,
+  .titlebar-close {
+    margin-right: 5px !important;
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   Reverse mode + macOS preference compatibility
+   Keep the original layout behavior without bringing back
+   any macOS button styling.
+   --------------------------------------------------------- */
+
+@media (-moz-bool-pref: "wireframe.macos.controls") {
+
+  @media (-moz-bool-pref: "wireframe.controls.reverse") {
+
+    .titlebar-buttonbox-container {
+      margin-right: 0px !important;
+    }
+
+    #zen-appcontent-navbar-container {
+      margin-right: 0px !important;
+    }
+
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   Top URL bar / sidebar button height adjustment
+   This is important for compact mode.
+   --------------------------------------------------------- */
+
+@media not (-moz-pref("zen.view.use-single-toolbar")) {
+
+  @media (-moz-bool-pref: "wireframe.urlbar.position.top") {
+
+    #zen-sidebar-top-buttons {
+      margin-top: -4px !important;
+    }
+
+  }
+
+}
+
+
+/* =========================================================
+   FORCE NATIVE WINDOWS APPEARANCE
+   ========================================================= */
+
+/*
+   The original Wireframe CSS uses:
+   
+   @media not (-moz-bool-pref: "wireframe.macos.controls")
+
+   for its custom macOS-style traffic-light buttons.
+
+   We intentionally do NOT reproduce that block here.
+
+   Therefore:
+   - no red/yellow/green circles
+   - no custom SVG icons
+   - no hidden native <image>
+   - native Windows minimize/maximize/close icons remain
+   - native hover/click behavior remains
+*/
+
+
+/* ---------------------------------------------------------
+   Prevent Wireframe from turning the native buttons into
+   colored macOS-style buttons if another rule tries to do so.
+   --------------------------------------------------------- */
+
 .titlebar-min,
 .titlebar-max,
 .titlebar-restore,
 .titlebar-close {
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
+  content: none !important;
+
+  background-image: none !important;
+
+  border: 0px solid transparent !important;
 }
 
-/* Remove the custom SVG overlays used by Wireframe */
+
+/* ---------------------------------------------------------
+   Make sure native button images remain available.
+   --------------------------------------------------------- */
+
+.titlebar-min > image,
+.titlebar-max > image,
+.titlebar-restore > image,
+.titlebar-close > image {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+
+/* ---------------------------------------------------------
+   Don't inject pseudo-element icons.
+   --------------------------------------------------------- */
+
 .titlebar-close::after,
 .titlebar-min::after,
 .titlebar-max::after,
 .titlebar-restore::after {
-    content: none !important;
-    display: none !important;
-    background-image: none !important;
+  content: none !important;
+  background-image: none !important;
 }
 
-/* Let Zen/Windows render the actual button icons */
-.titlebar-button > image {
-    visibility: visible !important;
-}
 
-/* Don't reorder the native Windows controls */
-.titlebar-buttonbox-container {
-    order: initial !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-}
-
-/* Keep the top URL-bar layout from shifting the sidebar buttons */
-@media (-moz-bool-pref: "wireframe.urlbar.position.top") {
-    #zen-sidebar-top-buttons {
-        margin-top: 0 !important;
-    }
-}
+/* =========================================================
+   END
+   ========================================================= */
