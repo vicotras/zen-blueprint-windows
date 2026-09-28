@@ -18,3 +18,21 @@
 @import url("modules/normal-urlbar.css");
 @import url("modules/pinned-extensions.css");
 @import url("modules/browser.css");
+
+/* === URLBAR HOVER / TEXT OVERRIDES === */
+
+/* Disable Wireframe hover animations on URL-bar results */
+#urlbar .urlbarView-row:hover,
+#urlbar .urlbarView-row:hover .urlbarView-title,
+#urlbar .search-one-offs .searchbar-engine-one-off-item:hover hbox {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+/* Keep URL text left-aligned like normal Zen/Firefox */
+#urlbar .urlbar-input-box > input.urlbar-input,
+#urlbar .urlbar-input {
+  text-align: left !important;
+}
