@@ -1,17 +1,17 @@
 /* =========================================================
    WIREframe Windows Controls
-   Clean Windows-native version
+   Windows-native controls
    ========================================================= */
 
 
 /* =========================================================
-   WINDOWS TITLEBAR CONTROLS
+   WINDOWS CONTROLS
    ========================================================= */
 
 @media not (-moz-bool-pref: "wireframe.macos.controls") {
 
   /* -------------------------------------------------------
-     Vertical tabs / right-side sidebar positioning
+     Vertical tabs / right-side sidebar
      ------------------------------------------------------- */
 
   @media -moz-pref("zen.tabs.vertical") {
@@ -30,44 +30,50 @@
   }
 
 
-  /* -------------------------------------------------------
-     Windows button group
-     ------------------------------------------------------- */
+  /* =======================================================
+     WINDOWS BUTTON GROUP
+     ======================================================= */
 
   .titlebar-buttonbox {
+
+    /*
+     * IMPORTANT:
+     * Do not modify the individual buttons.
+     * Only position the whole group.
+     */
+
     position: relative !important;
 
-    /* Normal mode position */
-    top: 4px !important;
-
-    /* Keep native size */
-    scale: 1 !important;
-
-    /* Spacing between Min / Max / Close */
-    gap: 5px !important;
-
-    align-items: center !important;
-
-    /* Original horizontal positioning */
     margin-right: -2px !important;
     margin-left: -4px !important;
 
-    /* Do NOT use transform here.
-       Native Windows hover animation depends on it. */
+    gap: 5px !important;
+
+    scale: 1 !important;
+
     transform: none !important;
+
+    align-items: center !important;
+
+    /*
+     * Normal/non-compact position
+     */
+    top: 0px !important;
   }
 
 
-  /* -------------------------------------------------------
-     Native Windows buttons
+  /* =======================================================
+     NATIVE WINDOWS BUTTONS
      
-     IMPORTANT:
-     No ::before / ::after / SVG / transition overrides.
-     Firefox/Zen handles the native Windows icons and
-     hover animation itself.
-     ------------------------------------------------------- */
+     Leave Firefox/Zen's native rendering alone.
+     ======================================================= */
 
   .titlebar-button {
+
+    /*
+     * Restore the native Windows button hitbox.
+     * This is what prevents the buttons becoming narrow.
+     */
     padding: 8px 18px !important;
 
     min-width: unset !important;
@@ -78,37 +84,40 @@
     margin-right: 0px !important;
 
     border-radius: 0px !important;
-    border: 0px solid transparent !important;
 
-    /* Keep Firefox/Zen's native hover animation */
+    /*
+     * Do not replace the native hover animation.
+     */
     transition: revert !important;
   }
 
 
-  /* -------------------------------------------------------
+  /* =======================================================
      COMPACT MODE
      
-     Zen moves the titlebar area when compact mode is active.
-     Push the Windows controls down slightly to compensate.
-     ------------------------------------------------------- */
+     Compact Mode changes the position of the titlebar
+     controls. Move the WHOLE group down rather than
+     manipulating the individual buttons.
+     ======================================================= */
 
   :root[zen-compact-mode="true"] {
 
+    .titlebar-buttonbox-container {
+      position: relative !important;
+      top: 10px !important;
+    }
+
     .titlebar-buttonbox {
-      top: 7px !important;
+      top: 0px !important;
     }
   }
 
 
   /* =======================================================
-     COMPACT MODE BUTTON
-     
-     This is the button inside:
-     #zen-sidebar-top-buttons-customization-target
+     COMPACT MODE / SIDEBAR BUTTON
      ======================================================= */
 
   #zen-sidebar-top-buttons-customization-target {
-
     align-items: center !important;
   }
 
@@ -117,18 +126,16 @@
   #zen-sidebar-top-buttons-customization-target
   .toolbarbutton-1 {
     position: relative !important;
-    top: 4px !important;
+    top: 0px !important;
   }
 
 
-  /* Compact mode:
-     the compact-mode/sidebar button itself gets pushed down
-     together with the Windows controls. */
-
+  /* Compact mode */
   :root[zen-compact-mode="true"]
   #zen-sidebar-top-buttons-customization-target
   .toolbarbutton-1 {
-    top: 7px !important;
+    position: relative !important;
+    top: 10px !important;
   }
 
 }
@@ -137,11 +144,6 @@
 /* =========================================================
    BUTTON ORDER
    ========================================================= */
-
-
-/* ---------------------------------------------------------
-   Normal button order
-   --------------------------------------------------------- */
 
 @media not (-moz-bool-pref: "wireframe.controls.reverse") {
 
@@ -165,7 +167,7 @@
   }
 
 
-  /* Position the whole Windows button group */
+  /* Windows control group */
   .titlebar-buttonbox-container {
     order: -1 !important;
     margin-left: 8px !important;
@@ -173,9 +175,9 @@
 }
 
 
-/* ---------------------------------------------------------
-   Reversed button order
-   --------------------------------------------------------- */
+/* =========================================================
+   REVERSED BUTTON ORDER
+   ========================================================= */
 
 @media (-moz-bool-pref: "wireframe.controls.reverse") {
 
