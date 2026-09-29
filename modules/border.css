@@ -44,75 +44,6 @@ body > hbox {
 }
 
 /* ====== WINDOW BORDERS ====== */
-@media (-moz-pref("wireframe.window.border", "wireframe")){
-    :root[sizemode="maximized"] #browser::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border: 2px solid var(--na-color-border);
-        pointer-events: none;
-        z-index: 9999;
-    }
-    
-    :root[sizemode="normal"] #browser::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border: 2px solid var(--na-color-border);
-        border-radius: var(--na-window-border-radius) !important;
-        pointer-events: none;
-        z-index: 9999;
-    }
-}
-
-@media (-moz-pref("wireframe.window.border", "macos")){
-    :root[sizemode="normal"] #browser::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        border-radius: var(--na-window-border-radius) !important;
-        z-index: 9999;
-        transform: translateZ(0);
-        will-change: box-shadow, opacity;
-
-        box-shadow:
-            /* --- corner mask (prevents corner bleed) --- */
-            inset 0 0 0 1px light-dark(
-                rgba(255,255,255,0.14),
-                rgba(255,255,255,0.10)
-            ),
-
-            /* --- curved metal highlight --- */
-            inset 0 0 0 2px light-dark(
-                rgba(255,255,255,0.32),
-                rgba(255,255,255,0.18)
-            ),
-
-            /* --- inner soft falloff (curved depth) --- */
-            inset 0 0 10px 4px light-dark(
-                rgba(0,0,0,0.05),
-                rgba(255,255,255,0.07)
-            ),
-
-            /* --- machined outer rim --- */
-            0 0 0 2px light-dark(
-                rgba(0,0,0,0.27),
-                rgba(255,255,255,0.30)
-            ),
-
-            /* --- outer structural ring --- */
-            0 3px 6px 1px light-dark(
-                rgba(0,0,0,0.08),
-                rgba(255,255,255,0.08)
-            ),
-
-            /* --- diffused Sonoma glow --- */
-            0 0 32px 10px color-mix(in srgb, accentcolor 55%, transparent),
-            0 0 64px 26px color-mix(in srgb, accentcolor 40%, transparent),
-            0 0 110px 60px color-mix(in srgb, accentcolor 28%, transparent);
-    }
-}
 
 :root[sizemode="fullscreen"] #browser::before {
     border: 0 !important;
@@ -174,93 +105,8 @@ body > hbox {
 }
 
 /* ====== WEBVIEW BORDER ====== */
-@media not (-moz-pref("wireframe.webview.border")){
-    /* content window border size on RIGHT side tabbar */
-    :root[zen-right-side="true"]:not([zen-compact-mode="true"]):not(
-            [inDOMFullscreen="true"]
-        )
-        #zen-tabbox-wrapper {
-        border: 0.1px solid transparent !important;
-    }
-
-    /* content window border size on LEFT side tabbar */
-    :root:not([zen-right-side="true"]):not([zen-compact-mode="true"]):not(
-            [inDOMFullscreen="true"]
-        )
-        #zen-tabbox-wrapper {
-        border: 0.1px solid transparent !important;
-    }
-}
-
-@media (-moz-pref("wireframe.webview.border", "wireframe")){
-    /* content window border size on RIGHT side tabbar */
-    :root[zen-right-side="true"]:not([zen-compact-mode="true"]):not(
-            [inDOMFullscreen="true"]
-        )
-        #zen-tabbox-wrapper {
-        border: 2px solid var(--na-color-border) !important;
-    }
-
-    /* content window border size on LEFT side tabbar */
-    :root:not([zen-right-side="true"]):not([zen-compact-mode="true"]):not(
-            [inDOMFullscreen="true"]
-        )
-        #zen-tabbox-wrapper {
-        border: 2px solid var(--na-color-border) !important;
-    }
-}
-
-@media (-moz-pref("wireframe.webview.border", "macos")) {
-
-    :root:not([zen-compact-mode="true"]):not([inDOMFullscreen="true"])
-
-    #zen-tabbox-wrapper::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        border-radius: var(--na-user-border-radius);
-        z-index: 9999;
-
-        box-shadow:
-            /* --- micro corner mask (softened) --- */
-            inset 0 0 0 1px rgba(255,255,255,0.10),
-
-            /* --- milky curved highlight (the secret sauce) --- */
-            inset 0 0 0 2px rgba(255,255,255,0.22),
-
-            /* --- concave falloff (boosted softness) --- */
-            inset 0 0 12px 6px rgba(0,0,0,0.06),
-
-            /* --- softened outer rim (less harsh) --- */
-            0 0 0 1px rgba(0,0,0,0.18),
-
-            /* --- light spread glow (barely visible, creates “milkiness”) --- */
-            0 0 12px 5px rgba(255,255,255,0.10),
-
-            /* --- depth ring (slightly larger, softer) --- */
-            0 2px 5px rgba(0,0,0,0.08);
-    }
-}
 
 /* fix for overflowing borders when webview border is off */
-@media not (-moz-pref("wireframe.webview.border")){
-    /* content window border size on RIGHT side tabbar */
-    :root[zen-right-side="true"]:not([zen-compact-mode="true"]):not(
-            [inDOMFullscreen="true"]
-        )
-        #zen-tabbox-wrapper {
-        border: 0.1px solid transparent !important;
-    }
-
-    /* content window border size on LEFT side tabbar */
-    :root:not([zen-right-side="true"]):not([zen-compact-mode="true"]):not(
-            [inDOMFullscreen="true"]
-        )
-        #zen-tabbox-wrapper {
-        border: 0.1px solid transparent !important;
-    }
-}
 
 /* remove content window border on split tabs*/
 /* :root:has(#tabbrowser-tabpanels [zen-split]) #zen-tabbox-wrapper {
@@ -295,16 +141,6 @@ body > hbox {
     padding: 0px !important;
     /*! background-color: var(--na-color-bg) !important; */
     padding: 0px !important;
-}
-
-@media (-moz-pref("wireframe.tab-shadow.disabled")){
-    #zen-appcontent-wrapper{
-        overflow: hidden !important;
-    }
-    
-    #zen-tabbox-wrapper{
-        overflow: hidden !important;
-    }
 }
 
 /* WEBVIEW BORDER RADIUS */
@@ -364,7 +200,6 @@ body > hbox {
     }
 }
 
-
 /* NO GAPS COMPACT MODE (DEFAULT) */
 
 :root[zen-single-toolbar="true"][zen-compact-mode="true"]:not([customizing]) {
@@ -416,28 +251,6 @@ body > hbox {
     } */
 
     --zen-element-separation: 0px !important;
-
-    @media not (-moz-pref("wireframe.urlbar.position.top")) {
-        #zen-tabbox-wrapper,
-        #tabbrowser-tabbox,
-        #tabbrowser-tabbox > *,
-        .browserSidebarContainer,
-        .browserSidebarContainer > * {
-            border-bottom-left-radius: 0 !important;
-            border-bottom-right-radius: 0 !important;
-        }
-    }
-
-    @media (-moz-pref("wireframe.urlbar.position.top")) {
-        #zen-tabbox-wrapper,
-        #tabbrowser-tabbox,
-        #tabbrowser-tabbox > *,
-        .browserSidebarContainer,
-        .browserSidebarContainer > * {
-            border-top-left-radius: 0 !important;
-            border-top-right-radius: 0 !important;
-        }
-    }
 }
 
 :root:not([zen-single-toolbar="true"])[zen-compact-mode="true"][sizemode="normal"] #browser,
@@ -464,181 +277,15 @@ body > hbox {
 
 /* BORDER FOR MULTI TOOLBAR TOP BAR */
 :root:not([zen-single-toolbar="true"])[zen-compact-mode="true"] {
-    @media not (-moz-pref("wireframe.urlbar.position.top")) {
-        #zen-appcontent-navbar-wrapper {
-            border-top: 2px solid var(--na-color-border) !important;
-        }
-    }
-
-    @media (-moz-pref("wireframe.urlbar.position.top")) {
-        #zen-appcontent-navbar-wrapper {
-            /* REMOVED: unwanted white separator under top URL bar */
-            border-bottom: none !important;
-        }
-    }
 }
 
 /* macos style border for essentials */
-@media (-moz-pref("wireframe.essen.borders", "macos-all")){
-  .tabbrowser-tab:has([zen-essential]) .tab-background::after{
-    position: absolute;
-    inset: 2px;
-    content: "";
-    border-radius: var(--na-essen-border-radius) !important;
-    box-shadow: 
-      /* --- corner mask: prevents edge halo bleeding --- */ 
-      inset 0 0 0 1px rgba(255,255,255,0.22), 
-      /* --- curved metal highlight (top + edges) --- */ 
-      inset 0 0 0 2px rgba(255,255,255,0.32), 
-      /* --- inner soft falloff depth --- */ 
-      inset 0 0 4px 1.5px rgba(0,0,0,0.08), 
-      /* --- machined outer rim --- */ 
-      0 0 0 1px rgba(0,0,0,0.25), 
-      /* --- outer structure ring / subtle glow --- */ 
-      0 2px 3px rgba(0,0,0,0.20)  
-  }
-}
-
-@media (-moz-pref("wireframe.essen.borders", "macos-active")){
-  .tabbrowser-tab[selected]:has([zen-essential]) .tab-background::after{
-    position: absolute;
-    inset: 2px;
-    content: "";
-    border-radius: var(--na-essen-border-radius) !important;
-    box-shadow: 
-      /* --- corner mask: prevents edge halo bleeding --- */ 
-      inset 0 0 0 1px rgba(255,255,255,0.22), 
-      /* --- curved metal highlight (top + edges) --- */ 
-      inset 0 0 0 2px rgba(255,255,255,0.32), 
-      /* --- inner soft falloff depth --- */ 
-      inset 0 0 4px 1.5px rgba(0,0,0,0.08), 
-      /* --- machined outer rim --- */ 
-      0 0 0 1px rgba(0,0,0,0.25), 
-      /* --- outer structure ring / subtle glow --- */ 
-      0 2px 3px rgba(255,255,255,0.20)  
-  }
-}
 
 /* macostyle border for tabs */
-@media (-moz-pref("wireframe.tab.borders", "macos-all")){
-  .tabbrowser-tab:not([zen-essential]) .tab-stack::after{
-    position: absolute;
-    z-index: -1 !important;
-    inset: 2px;
-    content: "";
-    border-radius: var(--na-tab-border-radius) !important;
-    box-shadow: 
-      /* --- corner mask: prevents edge halo bleeding --- */ 
-      inset 0 0 0 1px rgba(255,255,255,0.22), 
-      /* --- curved metal highlight (top + edges) --- */ 
-      inset 0 0 0 2px rgba(255,255,255,0.32), 
-      /* --- inner soft falloff depth --- */ 
-      inset 0 0 4px 1.5px rgba(0,0,0,0.08), 
-      /* --- machined outer rim --- */ 
-      0 0 0 1px rgba(0,0,0,0.25), 
-      /* --- outer structure ring / subtle glow --- */ 
-      0 2px 3px rgba(0,0,0,0.20)  
-  }
-}
-
-@media (-moz-pref("wireframe.tab.borders", "macos-active")){
-  .tabbrowser-tab[selected]:not([zen-essential]) .tab-stack::after{
-    position: absolute;
-    z-index: -1 !important;
-    inset: 2px;
-    content: "";
-    border-radius: var(--na-tab-border-radius) !important;
-    box-shadow: 
-      /* --- corner mask: prevents edge halo bleeding --- */ 
-      inset 0 0 0 1px rgba(255,255,255,0.22), 
-      /* --- curved metal highlight (top + edges) --- */ 
-      inset 0 0 4px 1.5px rgba(0,0,0,0.08), 
-      /* --- machined outer rim --- */ 
-      0 0 0 1px rgba(0,0,0,0.25), 
-      /* --- outer structure ring / subtle glow --- */ 
-      0 2px 3px rgba(0,0,0,0.20)  
-  }
-}
 
 /* === Webview Border Radius Pref === */
-@media (-moz-pref("wireframe.webview.border_radius", 0)) {
-    :root {
-        --na-user-border-radius: 0px;
-    }
-}
-
-@media (-moz-pref("wireframe.webview.border_radius", 4)) {
-    :root {
-        --na-user-border-radius: 4px;
-    }
-}
-
-@media (-moz-pref("wireframe.webview.border_radius", 8)) {
-    :root {
-        --na-user-border-radius: 8px;
-    }
-}
-
-@media (-moz-pref("wireframe.webview.border_radius", 12)) {
-    :root {
-        --na-user-border-radius: 12px;
-    }
-}
-
-@media (-moz-pref("wireframe.webview.border_radius", 16)) {
-    :root {
-        --na-user-border-radius: 16px;
-    }
-}
-
-@media (-moz-pref("wireframe.webview.border_radius", 20)) {
-    :root {
-        --na-user-border-radius: 20px;
-    }
-}
 
 /* === Window border radius pref === */
-@media (-moz-pref("wireframe.window.border_radius", 0)) {
-    :root {
-        --na-window-border-radius: 0px;
-    }
-}
-
-@media (-moz-pref("wireframe.window.border_radius", 4)) {
-    :root {
-        --na-window-border-radius: 4px;
-    }
-}
-
-@media (-moz-pref("wireframe.window.border_radius", 8)) {
-    :root {
-        --na-window-border-radius: 8px;
-    }
-}
-
-@media (-moz-pref("wireframe.window.border_radius", 12)) {
-    :root {
-        --na-window-border-radius: 12px;
-    }
-}
-
-@media (-moz-pref("wireframe.window.border_radius", 16)) {
-    :root {
-        --na-window-border-radius: 16px;
-    }
-}
-
-@media (-moz-pref("wireframe.window.border_radius", 20)) {
-    :root {
-        --na-window-border-radius: 20px;
-    }
-}
-
-@media (-moz-pref("wireframe.window.border_radius", 24)) {
-    :root {
-        --na-window-border-radius: 24px;
-    }
-}
 
 /* === NO GAPS === */
 
@@ -699,29 +346,16 @@ body > hbox {
 
 /* Always animate back and forth */
 browser {
-  @media (-moz-pref("wireframe.trackpad.animation")) {
-    transition: transform 0.33s ease, scale 0.33s ease, border-radius 0.33s ease !important;
-  }
 }
 
 /* Previous animation */
 .browserStack:has(
     #historySwipeAnimationPreviousArrow:not([style="translate: none;"])
 ) browser {
-  @media (-moz-pref("wireframe.trackpad.animation")) {
-    scale: 0.95 !important;
-    transform: translateX(3%) !important;
-    border-radius: var(--na-user-border-radius) !important;
-  }
 }
 
 /* Next animation */
 .browserStack:has(
     #historySwipeAnimationNextArrow:not([style="translate: none;"])
 ) browser {
-  @media (-moz-pref("wireframe.trackpad.animation")) {
-    scale: 0.95 !important;
-    transform: translateX(-3%) !important;
-    border-radius: var(--na-user-border-radius) !important;
-  }
 }
