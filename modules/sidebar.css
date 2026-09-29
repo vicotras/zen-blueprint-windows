@@ -164,18 +164,19 @@
 
 /* === FLOATING COMPACT SIDEBAR === */
 @media (-moz-pref("wireframe.floating-compact-sidebar.enabled")) {
+  /*
+   * Do not reposition #navigator-toolbox here.
+   * Zen's compact-mode controller owns its hover/expand geometry.
+   * Repositioning the toolbox with position:absolute causes the native
+   * hover surface/popups to detach from the sidebar and produces the
+   * black floating slab seen during hover.
+   */
   :root[zen-compact-mode="true"][zen-sidebar-expanded="true"] #navigator-toolbox {
-    position: absolute !important;
-    z-index: 1000 !important;
-    top: 10px !important;
-    bottom: 10px !important;
+    position: relative !important;
+    z-index: auto !important;
+    top: auto !important;
+    bottom: auto !important;
     height: auto !important;
-    border-radius: var(--na-user-border-radius) !important;
-  }
-
-  :root[zen-compact-mode="true"][zen-sidebar-expanded="true"] #titlebar {
-    height: 100% !important;
-    margin-block: 0 !important;
   }
 }
 
