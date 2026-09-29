@@ -307,6 +307,7 @@ body > hbox {
   :root:not([zen-compact-mode="true"]) #zen-tabbox-wrapper::before {
     box-shadow: none !important;
   }
+}
 
 /* ====== PREVIOUS/NEXT ANIMATION ====== */
 
