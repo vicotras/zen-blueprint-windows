@@ -14,13 +14,11 @@
   border-radius: var(--na-user-border-radius) !important;
 }
 
-
 .zen-toolbar-background {
   &, &::before, &::after {
     border-radius: var(--na-user-border-radius) !important;
   }
 }
-
 
 @media not (-moz-bool-pref: "zen.view.experimental-force-window-controls-left"){
   :root:not([zen-right-side])[zen-sidebar-expanded="true"][zen-compact-mode="true"] #titlebar {
@@ -41,18 +39,7 @@
     }
 }
 
-
 @media (-moz-pref("zen.view.use-single-toolbar")) {
-  @media not (-moz-bool-pref: "wireframe.urlbar.position.top"){
-    #zen-appcontent-navbar-wrapper::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -10px;
-      height: 20px; /* ← increases hover hitbox */
-    }
-  }
 
    :root[zen-sidebar-expanded="true"] {
       /* optional: slightly longer hide delay if your mouse motions are fast */
@@ -117,12 +104,9 @@
  min-width: 50px !important;
 }
 
-
 :root[zen-compact-mode="true"]:not([zen-sidebar-expanded="true"]) #navigator-toolbox {
   min-width: 90px !important;
 }
-
-
 
 /* ==== COMPACT SIDEBAR - MULTI-TOOLBAR ==== */
 
@@ -149,47 +133,10 @@
   }
 }
 
-@media (-moz-pref("wireframe.urlbar.position.top")){
-  :root:not([zen-single-toolbar="true"])[zen-compact-mode="true"] #navigator-toolbox{
-    height: calc(100% - 56px) !important;
-    margin-top: 0 !important;
-  }
-  :root:not([zen-single-toolbar="true"])[zen-compact-mode="true"] #titlebar{
-    height: calc(100% - 20px) !important;
-  }
-  
-  :root:not([zen-single-toolbar="true"]):not([zen-right-side])[zen-compact-mode="true"] #titlebar{
-    margin-left: 20px !important;
-  }
-  
-  :root:not([zen-single-toolbar="true"])[zen-right-side][zen-compact-mode="true"] #titlebar{
-    margin-right: 20px !important;
-  }
-}
-
 /* ==== COMPACT SIDEBAR - SINGLE-TOOLBAR ==== */
 
 @media(-moz-pref("wireframe.floating-compact-sidebar.enabled")){
   @media not (-moz-pref("wireframe.urlbar.position.top")){
-    :root[zen-single-toolbar="true"][zen-compact-mode="true"] #navigator-toolbox{
-      height: calc(100% - 24px) !important;
-      margin-top: 0 !important;
-      top: 22px !important;
-    }
-    :root[zen-single-toolbar="true"][zen-compact-mode="true"] #titlebar{
-      height: calc(100% - 20px) !important;
-    }
-
-    :root[zen-single-toolbar="true"]:not([zen-right-side])[zen-compact-mode="true"] #titlebar{
-      margin-left: 20px !important;
-    }
-
-    :root[zen-single-toolbar="true"][zen-right-side][zen-compact-mode="true"] #titlebar{
-      margin-right: 20px !important;
-    }
-  }
-
-  @media (-moz-pref("wireframe.urlbar.position.top")){
     :root[zen-single-toolbar="true"][zen-compact-mode="true"] #navigator-toolbox{
       height: calc(100% - 24px) !important;
       margin-top: 0 !important;
@@ -247,7 +194,6 @@
   border-radius: var(--na-user-border-radius) !important;
 }
 
-
 /* === SIDEBAR CONTENT === */
 
 #titlebar {
@@ -257,11 +203,7 @@
   border-radius: var(--na-user-border-radius) !important;
 }
 
-/* @media not (-moz-bool-pref: "wireframe.urlbar.position.top"){
-  #titlebar{
-    padding-top: 10px !important;
-  }
-} */
+/* */
 
 /* === WORKSPACE INDICATOR REVEAL ON HOVER === */
 
@@ -346,7 +288,6 @@
   background: color-mix(in srgb, var(--toolbarbutton-active-bgcolor) 50%, transparent);
 }
 
-
 /* === SIDEBAR FOOT BUTTON REVEAL ON HOVER === */
 
 @media (-moz-pref("wireframe.sidebar-foot.hide")) {
@@ -368,16 +309,6 @@
     }
   
   /* media player shift */
-  @media(-moz-pref("wireframe.workspace-switch.fan")){
-    #zen-media-controls-toolbar{
-      transform: translateY(48px) !important;
-      transition: transform 0.15s ease !important;
-    }
-
-    #navigator-toolbox:hover #zen-media-controls-toolbar{
-      transform: translateY(0) !important;
-    }
-  }
   
   @media not (-moz-pref("wireframe.workspace-switch.fan")){
     #zen-media-controls-toolbar{
@@ -390,7 +321,6 @@
     }
   }
 }
-
 
 /* ===  NEW TAB === */
 
@@ -458,28 +388,6 @@
 }
 
 /* === macos border for compact sidebar === */
-
-@media (-moz-pref("wireframe.macos.border")){
-  :root[zen-compact-mode="true"] #titlebar{
-    border: none !important;
-  }
-  
-  :root[zen-compact-mode="true"] #titlebar::before{
-    box-shadow: 
-      /* --- corner mask: prevents edge halo bleeding --- */ 
-      inset 0 0 0 1px rgba(255,255,255,0.22), 
-      /* --- curved metal highlight (top + edges) --- */ 
-      inset 0 0 0 2px rgba(255,255,255,0.32), 
-      /* --- inner soft falloff depth --- */ 
-      inset 0 0 8px 3px rgba(0,0,0,0.08), 
-      /* --- machined outer rim --- */ 
-      0 0 0 1.5px rgba(0,0,0,0.25), 
-      /* --- outer structure ring / subtle glow --- */ 
-      0 1.5px 3px rgba(0,0,0,0.20), 
-      /* --- soft Sonoma glow (barely visible, premium) --- */ 
-      0 0 22px 3px color-mix(in srgb, var(--zen-primary-color) 40%, transparent); 
-  } 
-}
 
 #zen-browser-tabs-wrapper stack {
   margin-block: 1px !important;
@@ -604,7 +512,6 @@ zen-folder {
   }
 }
 
-
 /* Border radius of essentials */
 .tabbrowser-tab:has([zen-essential]) .tab-background{
   border-radius: var(--na-essen-border-radius) !important;
@@ -721,94 +628,5 @@ zen-folder {
 /* ======= MEDIA QUERIES FOR PREFERENCES ======== */
 
 /* Pref for tab and folder border radius */
-@media (-moz-pref("wireframe.tab.border_radius",0)){
-  :root{
-    --na-tab-border-radius: 0px !important;
-  }
-}
-
-@media (-moz-pref("wireframe.tab.border_radius",4)){
-  :root{
-    --na-tab-border-radius: 4px !important;
-  }
-}
-
-@media (-moz-pref("wireframe.tab.border_radius",8)){
-  :root{
-    --na-tab-border-radius: 8px !important;
-  }
-}
-
-@media (-moz-pref("wireframe.tab.border_radius",12)){
-  :root{
-    --na-tab-border-radius: 12px !important;
-  }
-}
-
-@media (-moz-pref("wireframe.tab.border_radius",16)){
-  :root{
-    --na-tab-border-radius: 16px !important;
-  }
-}
-
-@media (-moz-pref("wireframe.tab.border_radius",20)){
-  :root{
-    --na-tab-border-radius: 20px !important;
-  }
-}
-
-@media (-moz-pref("wireframe.tab.border_radius",24)){
-  :root{
-    --na-tab-border-radius: 24px !important;
-  }
-}
 
 /* Pref for essentials border radius */
-
-@media (-moz-pref("wireframe.essentials.border_radius",0)){
-  :root{
-    --na-essen-border-radius: 0px !important;
-  }
-}
-
-@media (-moz-pref("wireframe.essentials.border_radius",4)){
-  :root{
-    --na-essen-border-radius: 4px !important;
-  }
-}
-
-@media (-moz-pref("wireframe.essentials.border_radius",8)){
-  :root{
-    --na-essen-border-radius: 8px !important;
-  }
-}
-
-@media (-moz-pref("wireframe.essentials.border_radius",12)){
-  :root{
-    --na-essen-border-radius: 12px !important;
-  }
-}
-
-@media (-moz-pref("wireframe.essentials.border_radius",16)){
-  :root{
-    --na-essen-border-radius: 16px !important;
-  }
-}
-
-@media (-moz-pref("wireframe.essentials.border_radius",20)){
-  :root{
-    --na-essen-border-radius: 20px !important;
-  }
-}
-
-@media (-moz-pref("wireframe.essentials.border_radius",24)){
-  :root{
-    --na-essen-border-radius: 24px !important;
-  }
-}
-
-@media (-moz-pref("wireframe.essentials.border_radius",50)){
-  :root{
-    --na-essen-border-radius: 100px !important;
-  }
-}
