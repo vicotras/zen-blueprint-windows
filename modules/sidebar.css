@@ -180,6 +180,16 @@
   }
 }
 
+/* === EXPANDED COMPACT TAB ALIGNMENT === */
+/*
+ * The visible tab group is a separate flex container in current Zen.
+ * Shift that container itself right; padding on #tabbrowser-tabs does not
+ * affect the child geometry in this layout.
+ */
+:root[zen-compact-mode="true"][zen-sidebar-expanded="true"] #zen-pinned-tabs-section {
+  transform: translateX(22px) !important;
+}
+
 /* === EXPANDED COMPACT TAB INSET === */
 /*
  * Center the entire tab strip inside the expanded toolbox.
