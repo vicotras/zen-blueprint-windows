@@ -1,5 +1,5 @@
 
-# Wireframe Theme Configuration
+# Blueprint Theme Configuration
 
 ## Preferences Implementation
 
@@ -10,7 +10,7 @@ This theme implements customizable preferences using Zen Browser's preference sy
 ### Boolean Preferences
 
 1. `zen.view.use-single-toolbar` - Use single toolbar layout
-2. `wireframe.animations.enabled` - Enable animations in Wireframe theme
+2. `wireframe.animations.enabled` - Enable animations in Blueprint theme
 3. `wireframe.borders.squared` - Use squared borders
 4. `wireframe.urlbar.position.top` - Position URL bar at the top (for multiple and collapsed toolbar only)
 5. `wireframe.macos.controls` - Disable macOS style window controls
@@ -84,10 +84,10 @@ To add new preferences to the theme:
 4. Group related preferences logically
 5. Test preferences thoroughly to ensure they work as expected
 
-## New Features in Wireframe 2.0
+## New Features in Blueprint 2.0
 
 ### Border Radius Controls
-Wireframe 2.0 introduces comprehensive border radius controls for different UI elements:
+Blueprint 2.0 introduces comprehensive border radius controls for different UI elements:
 - Webview border radius: Control the corner radius of the web content area
 - Window border radius: Adjust the corner radius of the browser window
 - Tab border radius: Customize the corner radius of browser tabs
