@@ -87,5 +87,183 @@
     "label": "Enable pinned extensions",
     "value": "boolean",
     "defaultValue": false
+  },
+  {
+    "type": "text",
+    "label": "Tabs",
+    "margin": "30px 0 20px 0",
+    "size": "25px"
+  },
+  {
+    "type": "checkbox",
+    "property": "wireframe.new-tab.label",
+    "label": "Enable custom new tab label",
+    "value": "boolean",
+    "default": true
+  },
+  {
+    "type": "checkbox",
+    "property": "wireframe.new-tab.reveal.animation",
+    "label": "Reveal new tab label on hover",
+    "value": "boolean",
+    "default": true
+  },
+  {
+    "type": "checkbox",
+    "property": "zen.theme.essentials-favicon-bg",
+    "label": "Enable favicon gradient background for essentials",
+    "value": "boolean",
+    "default": true
+  },
+  {
+    "type": "checkbox",
+    "property": "wireframe.audio.indicator.disable",
+    "label": "Disable audio indicator on tab",
+    "value": "boolean",
+    "default": false
+  },
+  {
+    "type": "checkbox",
+    "property": "wireframe.tab-hover.animation",
+    "label": "Enable tab hover animation",
+    "value": "boolean",
+    "default": true
+  },
+  {
+    "type": "checkbox",
+    "property": "wireframe.tab-icon.invert",
+    "label": "Invert tab icon color",
+    "value": "boolean",
+    "default": true
+  },
+  {
+    "type": "dropdown",
+    "property": "wireframe.folders",
+    "label": "Folder styling",
+    "value": "string",
+    "defaultValue": "border",
+    "options": [
+      {"value": "border", "label": "Border"},
+      {"value": "background", "label": "Background"}
+    ]
+  },
+  {
+    "type": "dropdown",
+    "property": "wireframe.tab-loading.animation",
+    "label": "Tab loading animation",
+    "value": "string",
+    "defaultValue": "both",
+    "options": [
+      {"value": "loadbar", "label": "Loading Bar"},
+      {"value": "tab-bg-loading", "label": "Tab Background Progress Bar"},
+      {"value": "both", "label": "Both"}
+    ]
+  },
+  {
+    "type": "dropdown",
+    "property": "wireframe.tab-switch.animation",
+    "label": "Tab switching animation",
+    "value": "string",
+    "defaultValue": "Vertical Veil",
+    "options": [
+      {"value": "Vertical Veil", "label": "Vertical Veil"},
+      {"value": "Clean Sever", "label": "Clean Sever"},
+      {"value": "Blurry Dreams", "label": "Blurry Dreams"},
+      {"value": "Prism Shatter", "label": "Prism Shatter"},
+      {"value": "Hard Cut", "label": "Hard Cut"},
+      {"value": "Monolith Slide", "label": "Monolith Slide"},
+      {"value": "Film Dissolve", "label": "Film Dissolve"}
+    ]
+  },
+  {
+    "type": "text",
+    "label": "Typography",
+    "margin": "30px 0 20px 0",
+    "size": "25px"
+  },
+  {
+    "type": "dropdown",
+    "property": "wireframe.font",
+    "label": "Font",
+    "value": "string",
+    "defaultValue": "Bricolage",
+    "options": [
+      {"value": "SF-Pro", "label": "SF-Pro"},
+      {"value": "Bricolage", "label": "Bricolage Grotesque"},
+      {"value": "Monocraft", "label": "Monocraft"},
+      {"value": "GeistMono", "label": "Geist Mono"},
+      {"value": "JetBrainsMono", "label": "JetBrains Mono"},
+      {"value": "SUSE", "label": "SUSE"},
+      {"value": "SUSEMono", "label": "SUSE Mono"}
+    ]
+  },
+  {
+    "type": "string",
+    "property": "wireframe-font-size",
+    "processAs": "root",
+    "label": "Tab font size",
+    "defaultValue": "",
+    "placeholder": "12px"
+  },
+  {
+    "type": "text",
+    "label": "Picture-in-Picture",
+    "margin": "30px 0 20px 0",
+    "size": "25px"
+  },
+  {
+    "type": "checkbox",
+    "property": "wireframe.pip.disabled",
+    "label": "Disable Picture-in-Picture customization",
+    "value": "boolean",
+    "default": false
+  },
+  {
+    "type": "checkbox",
+    "property": "wireframe.pip.rounded",
+    "label": "Enable rounded PiP window",
+    "value": "boolean",
+    "default": false
+  },
+  {
+    "type": "dropdown",
+    "property": "wireframe.pip.border_radius",
+    "label": "PiP control border radius",
+    "value": "number",
+    "default": 0,
+    "options": [
+      {"value": 0, "label": "0px"},
+      {"value": 4, "label": "4px"},
+      {"value": 6, "label": "6px"},
+      {"value": 8, "label": "8px"},
+      {"value": 10, "label": "10px"}
+    ]
+  },
+  {
+    "type": "checkbox",
+    "property": "wireframe.pip.blur",
+    "label": "Enable PiP control blur",
+    "value": "boolean",
+    "default": false
+  },
+  {
+    "type": "text",
+    "label": "Media Player",
+    "margin": "30px 0 20px 0",
+    "size": "25px"
+  },
+  {
+    "type": "checkbox",
+    "property": "wireframe.player.minimal",
+    "label": "Minimal media player",
+    "value": "boolean",
+    "default": true
+  },
+  {
+    "type": "checkbox",
+    "property": "wireframe.player.flip",
+    "label": "Flip media player",
+    "value": "boolean",
+    "default": false
   }
 ]
