@@ -84,11 +84,7 @@
   flex: 0 0 auto !important;
 }*/
 
-/* bottombar background transparent for expanded urlbar */
-.urlbar-background,
-#urlbar-container {
-  background-color: var(--na-color-zero) !important;
-}
+/* Keep the expanded URL bar opaque; the closed pill is styled in userChrome.css. */
 
 .tab-stack {
   box-shadow: none !important;
