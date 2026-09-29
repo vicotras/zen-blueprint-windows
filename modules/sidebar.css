@@ -132,25 +132,6 @@
 
 /* ==== COMPACT SIDEBAR - SINGLE-TOOLBAR ==== */
 
-@media(-moz-pref("wireframe.floating-compact-sidebar.enabled")){:root[zen-single-toolbar="true"][zen-compact-mode="true"] #navigator-toolbox{
-      height: calc(100% - 24px) !important;
-      margin-top: 0 !important;
-      top: 22px !important;
-    }
-    :root[zen-single-toolbar="true"][zen-compact-mode="true"] #titlebar{
-      height: calc(100% - 20px) !important;
-    }
-
-    :root[zen-single-toolbar="true"]:not([zen-right-side])[zen-compact-mode="true"] #titlebar{
-      margin-left: 20px !important;
-    }
-
-    :root[zen-single-toolbar="true"][zen-right-side][zen-compact-mode="true"] #titlebar{
-      margin-right: 20px !important;
-    }
-
-}
-
 /* expanded floating sidebar */
 :root[zen-sidebar-expanded="true"][zen-compact-mode="true"] #titlebar {
   padding: 10px !important;
@@ -622,3 +603,8 @@ zen-folder {
 /* Pref for tab and folder border radius */
 
 /* Pref for essentials border radius */
+/* Keep compact sidebar background stable while hovering. */
+:root[zen-compact-mode="true"] #titlebar,
+:root[zen-compact-mode="true"] #titlebar:hover {
+  background: var(--zen-toolbar-background) !important;
+}
