@@ -177,15 +177,18 @@
     top: auto !important;
     bottom: auto !important;
     height: auto !important;
-    transform: translateY(10px) !important;
-  }
-
-  :root[zen-compact-mode="true"][zen-sidebar-expanded="true"] #titlebar {
-    transform: translateY(10px) !important;
   }
 }
 
-/* === COLLAPSED COMPACT === */
+/* === EXPANDED COMPACT SIDEBAR POSITION === */
+/*
+ * Zen's native compact-mode rules own the sidebar geometry.
+ * Move the actual titlebar itself instead of the toolbox.
+ */
+:root[zen-compact-mode="true"][zen-sidebar-expanded="true"] #titlebar {
+  position: relative !important;
+  top: 10px !important;
+}
 
 :root[zen-compact-mode="true"] #titlebar {
   padding: 10px !important;
