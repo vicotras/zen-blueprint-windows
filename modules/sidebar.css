@@ -192,12 +192,19 @@
 
 /* === EXPANDED COMPACT NORMAL TAB ALIGNMENT === */
 /*
- * Keep the right edge where it is and bring only the left edge inward.
- * This matches the current Zen normal-tabs flex section.
+ * Zen exposes the normal tab section as a class, not an id.
+ * Pull only the tab cards inward from the left while preserving
+ * the right edge.
  */
-:root[zen-compact-mode="true"][zen-sidebar-expanded="true"] #zen-workspace-normal-tabs-section {
-  margin-left: 6px !important;
+:root[zen-compact-mode="true"][zen-sidebar-expanded="true"] .zen-workspace-normal-tabs-section {
+  padding-left: 6px !important;
+  box-sizing: border-box !important;
+}
+
+:root[zen-compact-mode="true"][zen-sidebar-expanded="true"] .zen-workspace-normal-tabs-section > .tabbrowser-tab {
+  margin-left: 0 !important;
   width: calc(100% - 6px) !important;
+  max-width: none !important;
 }
 
 /* === EXPANDED COMPACT TAB INSET === */
