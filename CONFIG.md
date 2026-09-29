@@ -1,5 +1,5 @@
 
-# Blueprint Theme Configuration
+# Blackprint Theme Configuration
 
 ## Preferences Implementation
 
@@ -84,10 +84,10 @@ To add new preferences to the theme:
 4. Group related preferences logically
 5. Test preferences thoroughly to ensure they work as expected
 
-## New Features in Blueprint 2.0
+## New Features in Blackprint 1.1
 
 ### Border Radius Controls
-Blueprint 2.0 introduces comprehensive border radius controls for different UI elements:
+Blackprint 1.1 introduces comprehensive border radius controls for different UI elements:
 - Webview border radius: Control the corner radius of the web content area
 - Window border radius: Adjust the corner radius of the browser window
 - Tab border radius: Customize the corner radius of browser tabs
