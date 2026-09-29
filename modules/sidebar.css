@@ -182,12 +182,11 @@
 
 /* === EXPANDED COMPACT SIDEBAR POSITION === */
 /*
- * Zen's native compact-mode rules own the sidebar geometry.
- * Move the actual titlebar itself instead of the toolbox.
+ * The visible floating panel is the navigator toolbox itself.
+ * Move the whole toolbox, not #titlebar.
  */
-:root[zen-compact-mode="true"][zen-sidebar-expanded="true"] #titlebar {
-  position: relative !important;
-  top: 10px !important;
+:root[zen-compact-mode="true"][zen-sidebar-expanded="true"] #navigator-toolbox {
+  transform: translateY(10px) !important;
 }
 
 :root[zen-compact-mode="true"] #titlebar {
