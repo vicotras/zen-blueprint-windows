@@ -88,6 +88,7 @@
 .urlbar-background,
 #urlbar-container {
   background-color: var(--na-color-zero) !important;
+}
 
 .tab-stack {
   box-shadow: none !important;
