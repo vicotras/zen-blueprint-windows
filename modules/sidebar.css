@@ -179,6 +179,10 @@
     height: auto !important;
     transform: translateY(10px) !important;
   }
+
+  :root[zen-compact-mode="true"][zen-sidebar-expanded="true"] #titlebar {
+    transform: translateY(10px) !important;
+  }
 }
 
 /* === COLLAPSED COMPACT === */
