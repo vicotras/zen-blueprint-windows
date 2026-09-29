@@ -812,3 +812,42 @@ zen-folder {
     --na-essen-border-radius: 100px !important;
   }
 }
+
+/* === REMOVE COMPACT SIDEBAR CHROME BACKGROUND === */
+/* Keep compact-mode hover/expand behavior, but make the chrome layer itself transparent. */
+:root[zen-compact-mode="true"] {
+  --zen-navigator-toolbox-background: transparent !important;
+  --zen-toolbar-background: transparent !important;
+}
+
+:root[zen-compact-mode="true"] #navigator-toolbox,
+:root[zen-compact-mode="true"] #titlebar,
+:root[zen-compact-mode="true"] #zen-toolbar-background,
+:root[zen-compact-mode="true"] .zen-toolbar-background,
+:root[zen-compact-mode="true"] #TabsToolbar,
+:root[zen-compact-mode="true"] #TabsToolbar-customization-target {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+:root[zen-compact-mode="true"] #zen-toolbar-background::before,
+:root[zen-compact-mode="true"] #zen-toolbar-background::after,
+:root[zen-compact-mode="true"] .zen-toolbar-background::before,
+:root[zen-compact-mode="true"] .zen-toolbar-background::after,
+:root[zen-compact-mode="true"] #titlebar::before,
+:root[zen-compact-mode="true"] #titlebar::after {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* The transparent-sidebar blur layer may still be used, but must not tint the chrome. */
+@media (-moz-pref("wireframe.compact.sidebar.transparent")) {
+  :root[zen-compact-mode="true"] #zen-toolbar-background::before {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+}
