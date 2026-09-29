@@ -2,6 +2,16 @@
 
 /* === ZEN WORKSPACE SWITCHER — POLISHED FAN === */
 
+@keyframes slideUpAdressBar {
+  from {
+    transform: translateY(15%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
 /* === TAB SWITCHING ANIMATIONS === */
 
 @media (-moz-pref("wireframe.tab-switch.animation","Vertical Veil")){
