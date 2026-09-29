@@ -45,12 +45,17 @@
   bottom: auto !important;
 }
 
-/* === REMOVE ONLY THE CLOSED URLBAR BACKGROUND === */
-/* The URL bar, URL text, icons, and open/search popup remain intact. */
+/* === DARK TRANSLUCENT URLBAR PILL === */
+/* Keep the pill; make only its surface translucent and darker. */
 #urlbar:not([open]) > .urlbar-background {
-  background: transparent !important;
-  background-color: transparent !important;
+  background: rgba(0, 0, 0, 0.62) !important;
+  background-color: rgba(0, 0, 0, 0.62) !important;
   background-image: none !important;
   box-shadow: none !important;
-  border: none !important;
+}
+
+/* Let the browser/titlebar surface show through instead of adding another solid strip. */
+#titlebar {
+  background: transparent !important;
+  background-color: transparent !important;
 }
