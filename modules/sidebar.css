@@ -187,7 +187,8 @@
  * are identical; do not use margins on individual tab backgrounds.
  */
 :root[zen-compact-mode="true"][zen-sidebar-expanded="true"] #tabbrowser-tabs {
-  padding-inline: 16px !important;
+  padding-left: 38px !important;
+  padding-right: 16px !important;
   box-sizing: border-box !important;
 }
 
