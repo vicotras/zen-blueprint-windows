@@ -44,3 +44,13 @@
   top: auto !important;
   bottom: auto !important;
 }
+
+/* === REMOVE ONLY THE CLOSED URLBAR BACKGROUND === */
+/* The URL bar, URL text, icons, and open/search popup remain intact. */
+#urlbar:not([open]) > .urlbar-background {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
