@@ -1,11 +1,11 @@
-# Wireframe 2.0
+# Blueprint 2.0
 
 **An aesthetic chameleon for Zen Browser.**
 
 <img width="1920" height="1080" alt="Screenshot (233)" src="https://github.com/user-attachments/assets/cb60b1c0-47dd-4efd-a032-22939233654c" />
 <br>
 
-Wireframe 2.0 is a shape-shifting canvas. It doesn't lock you into a single look—with a few toggles, you can morph your browser from a sharp, grungy Y2K cyber-grid to a soft, pillowy pastel-minimalist setup.
+Blueprint 2.0 is a shape-shifting canvas. It doesn't lock you into a single look—with a few toggles, you can morph your browser from a sharp, grungy Y2K cyber-grid to a soft, pillowy pastel-minimalist setup.
 
 Think:
 
@@ -75,7 +75,7 @@ Download and install Sine.
 
 ### 2. Add Wireframe
 
-Search for **Wireframe 2.0**
+Search for **Blueprint 2.0**
 
 **or**
 
@@ -87,9 +87,9 @@ SehajveerSingh2005/zen-wireframe-2.0
 
 ### 3. Apply Theme & Customize
 
-Enable Wireframe 2.0 from your installed mods.
+Enable Blueprint 2.0 from your installed mods.
 
-Click the gear icon under **Wireframe 2.0** in your Sine settings to access the massive panel of local preferences and tweak it to your heart's content.
+Click the gear icon under **Blueprint 2.0** in your Sine settings to access the massive panel of local preferences and tweak it to your heart's content.
 
 ---
 
@@ -109,7 +109,7 @@ Want those perfectly razor-sharp, zero-curvature window edges shown in the scree
 
 Most browser themes force a single identity on you.
 
-Wireframe 2.0 does the opposite.
+Blueprint 2.0 does the opposite.
 
 It’s an open-ended playground that recognizes your design tastes change. By making borders, curves, animations, and graphic details hot-swappable, it lets you transition between retro-tech and modern-minimalism whenever you feel like it.
 
@@ -128,6 +128,6 @@ Because your browser shouldn't just match your wallpaper; it should match your m
 
 ---
 
-**Wireframe 2.0**
+**Blueprint 2.0**
 
 *shift your vibe.*
