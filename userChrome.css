@@ -49,10 +49,7 @@
 /* Keep the browser toolbar background; only remove the URL bar's own background. */
 #urlbar:not([open]),
 #urlbar:not([open]) > .urlbar-background,
-#urlbar:not([open]) > .urlbar-input-container,
-#urlbar[open],
-#urlbar[open] > .urlbar-background,
-#urlbar[open] > .urlbar-input-container {
+#urlbar:not([open]) > .urlbar-input-container {
   background: transparent !important;
   background-color: transparent !important;
   background-image: none !important;
