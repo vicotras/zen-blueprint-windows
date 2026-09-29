@@ -2,8 +2,6 @@
 
 **A Windows-focused customization mod for Zen Browser.**
 
-<img width="1920" height="1080" alt="Blueprint 2.0" src="https://github.com/user-attachments/assets/cb60b1c0-47dd-4efd-a032-22939233654c" />
-
 Blueprint 2.0 adds extensive visual customization to Zen Browser, with an emphasis on clean geometric UI, adjustable curvature, animations, backgrounds, and Windows-friendly styling.
 
 ## Features
@@ -17,14 +15,6 @@ Blueprint 2.0 adds extensive visual customization to Zen Browser, with an emphas
 - Media player and Picture-in-Picture styling
 - Multiple font options
 - Windows-focused squared window styling
-
-## Preview
-
-<img width="1920" height="1080" alt="Blueprint preview" src="https://github.com/user-attachments/assets/2ca85389-ebd1-4e2c-9439-aec978888ff4" />
-
-<img width="1920" height="1080" alt="Blueprint preview" src="https://github.com/user-attachments/assets/1f5652fb-730a-420a-9ce5-f1094d93c09c" />
-
-<img width="1920" height="1080" alt="Blueprint preview" src="https://github.com/user-attachments/assets/32c5eea1-eb72-4b03-9e6e-fa3fff539ec1" />
 
 ## Installation
 
