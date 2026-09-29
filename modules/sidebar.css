@@ -186,7 +186,7 @@
  * Move the whole toolbox, not #titlebar.
  */
 :root[zen-compact-mode="true"][zen-sidebar-expanded="true"] #navigator-toolbox {
-  transform: translateY(10px) !important;
+  transform: translateY(30px) !important;
 }
 
 :root[zen-compact-mode="true"] #titlebar {
