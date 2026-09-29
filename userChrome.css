@@ -45,12 +45,14 @@
   bottom: auto !important;
 }
 
-/* === REMOVE NORMAL URLBAR BACKGROUND === */
-/* The URL bar itself should not appear as a separate pill/bar. */
+/* === REMOVE URLBAR PILL BACKGROUND === */
+/* Keep the browser toolbar background; only remove the URL bar's own background. */
 #urlbar:not([open]),
 #urlbar:not([open]) > .urlbar-background,
 #urlbar:not([open]) > .urlbar-input-container,
-#urlbar-container {
+#urlbar[open],
+#urlbar[open] > .urlbar-background,
+#urlbar[open] > .urlbar-input-container {
   background: transparent !important;
   background-color: transparent !important;
   background-image: none !important;
