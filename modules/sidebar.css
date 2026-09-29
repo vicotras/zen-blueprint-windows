@@ -141,22 +141,21 @@
 /* Hide tabbar when there are no active tabs */
 /* Credits to ivaon */
 @media (-moz-pref("wireframe.compact-sidebar.hide")){
-  :root[zen-compact-mode="true"] {
-    @media -moz-pref('zen.view.compact.hide-tabbar') or -moz-pref('zen.view.use-single-toolbar') {
-      &:not([zen-compact-animating]) {
-        #navigator-toolbox[zen-has-empty-tab] {
-          left: calc(-1 * var(--actual-zen-sidebar-width) + var(--zen-element-separation) / 2 + 1px) !important;
-          :root[zen-right-side='true'] & {
-            right: calc(-1 * var(--actual-zen-sidebar-width) + var(--zen-element-separation) / 2 + 1px) !important;
-            left: auto !important;
-          }
-          &[zen-has-hover="true"] {
-            left: calc(var(--zen-compact-float)/-2) !important;
-            :root[zen-right-side='true'] & {
-              right: calc(var(--zen-compact-float)/-2) !important;
-              left: auto !important;
-            }
-          }
+  :root[zen-compact-mode="true"]:not([zen-compact-animating]) {
+    #navigator-toolbox[zen-has-empty-tab] {
+      left: calc(-1 * var(--actual-zen-sidebar-width) + var(--zen-element-separation) / 2 + 1px) !important;
+
+      :root[zen-right-side="true"] & {
+        right: calc(-1 * var(--actual-zen-sidebar-width) + var(--zen-element-separation) / 2 + 1px) !important;
+        left: auto !important;
+      }
+
+      &[zen-has-hover="true"] {
+        left: calc(var(--zen-compact-float) / -2) !important;
+
+        :root[zen-right-side="true"] & {
+          right: calc(var(--zen-compact-float) / -2) !important;
+          left: auto !important;
         }
       }
     }
@@ -564,7 +563,8 @@ zen-folder {
   }
 
   /* remove conflicting background that was killing blur */
-  :root[zen-compact-mode="true"] .zen-toolbar-background {
+  :root[zen-compact-mode="true"] .zen-toolbar-background,
+  :root[zen-compact-mode="true"] .zen-toolbar-background:hover {
     background: transparent !important;
     opacity: 1 !important;
   }
@@ -603,8 +603,3 @@ zen-folder {
 /* Pref for tab and folder border radius */
 
 /* Pref for essentials border radius */
-/* Keep compact sidebar background stable while hovering. */
-:root[zen-compact-mode="true"] #titlebar,
-:root[zen-compact-mode="true"] #titlebar:hover {
-  background: var(--zen-toolbar-background) !important;
-}
