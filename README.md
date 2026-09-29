@@ -2,19 +2,16 @@
 
 **A Windows-focused customization mod for Zen Browser.**
 
-Blackprint 1.1 adds extensive visual customization to Zen Browser, with an emphasis on clean geometric UI, adjustable curvature, animations, backgrounds, and Windows-friendly styling.
+Blackprint 1.1 is a lightweight customization mod focused on the parts of Zen that are actively maintained in this fork: toolbar/sidebar controls, tab styling and animations, typography, Picture-in-Picture, media controls, and Windows-friendly styling.
 
 ## Features
 
-- Adjustable window, tab, toolbar, and webview curvature
-- Geometric backgrounds and patterns
-- Custom blank-page emblems
-- URL bar and focus animations
-- Tab transition effects
-- Toolbar and favicon customization
-- Media player and Picture-in-Picture styling
-- Multiple font options
-- Windows-focused squared window styling
+- Toolbar and sidebar customization
+- Tab hover, loading, and switching animations
+- Custom tab typography and fonts
+- Picture-in-Picture styling
+- Media player styling
+- Windows-focused UI styling
 
 ## Installation
 
@@ -41,4 +38,4 @@ For fully squared window corners on Windows 10/11, **MicaForEveryone** can be us
 
 ---
 
-**Blackprint 1.1 — a customizable Windows-focused Zen Browser theme.**
+**Blackprint 1.1 — a lightweight Windows-focused Zen Browser customization mod.**
