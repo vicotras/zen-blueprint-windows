@@ -180,6 +180,16 @@
   }
 }
 
+/* === EXPANDED COMPACT TAB INSET === */
+/*
+ * Keep the visible tab cards centered inside the expanded sidebar.
+ * Zen can give the tab strip asymmetric internal space during compact-mode
+ * expansion, so set the visual tab inset explicitly on both sides.
+ */
+:root[zen-compact-mode="true"][zen-sidebar-expanded="true"] #tabbrowser-tabs .tab-background {
+  margin-inline: 16px !important;
+}
+
 /* === EXPANDED COMPACT SIDEBAR POSITION === */
 /*
  * The visible floating panel is the navigator toolbox itself.
