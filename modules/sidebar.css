@@ -162,6 +162,23 @@
   }
 }
 
+/* === FLOATING COMPACT SIDEBAR === */
+@media (-moz-pref("wireframe.floating-compact-sidebar.enabled")) {
+  :root[zen-compact-mode="true"][zen-sidebar-expanded="true"] #navigator-toolbox {
+    position: absolute !important;
+    z-index: 1000 !important;
+    top: 10px !important;
+    bottom: 10px !important;
+    height: auto !important;
+    border-radius: var(--na-user-border-radius) !important;
+  }
+
+  :root[zen-compact-mode="true"][zen-sidebar-expanded="true"] #titlebar {
+    height: 100% !important;
+    margin-block: 0 !important;
+  }
+}
+
 /* === COLLAPSED COMPACT === */
 
 :root[zen-compact-mode="true"] #titlebar {
