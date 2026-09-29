@@ -288,59 +288,25 @@ body > hbox {
 /* === Window border radius pref === */
 
 /* === NO GAPS === */
+@media (-moz-pref("wireframe.nogaps.enabled")) {
+  :root {
+    --zen-element-separation: 0px !important;
+  }
 
-@media (-moz-pref("wireframe.nogaps.enabled")){
-    :root[zen-single-toolbar="true"]{
-        --zen-element-separation: 0px !important;
-    }
-    
-    :root[zen-single-toolbar="true"]:not([zen-right-side="true"]):not([zen-compact-mode="true"]){
-        #zen-tabbox-wrapper,
-        #tabbrowser-tabbox,
-        #tabbrowser-tabpanels,
-        #tabbrowser-tabpanels > * {
-            border-top-left-radius: 0px !important;
-            border-bottom-left-radius: 0px !important;
-            border-top-right-radius: 0px !important;
-            border-bottom-right-radius: 0px !important;
-        }
-        
-        #zen-tabbox-wrapper{
-            border: none !important;
-        }
-        
-        #zen-tabbox-wrapper::before {
-            box-shadow: none !important;
-        }
-    }
-    
-    :root[zen-single-toolbar="true"][zen-right-side="true"]:not([zen-compact-mode="true"]){
-        #zen-tabbox-wrapper,
-        #tabbrowser-tabbox,
-        #tabbrowser-tabpanels,
-        #tabbrowser-tabpanels > * {
-            border-top-right-radius: 0px !important;
-            border-bottom-right-radius: 0px !important;
-            border-top-left-radius: 0px !important;
-            border-bottom-left-radius: 0px !important;
-        }
-        
-        #zen-tabbox-wrapper{
-            border: none !important;
-        }
-        
-        #zen-tabbox-wrapper::before {
-            box-shadow: none !important;
-        }
-    }
-}
+  :root:not([zen-compact-mode="true"]) #zen-tabbox-wrapper,
+  :root:not([zen-compact-mode="true"]) #tabbrowser-tabbox,
+  :root:not([zen-compact-mode="true"]) #tabbrowser-tabpanels,
+  :root:not([zen-compact-mode="true"]) #tabbrowser-tabpanels > * {
+    border-radius: 0 !important;
+  }
 
-/* fix for transparent blank page */
-.browserStack {
-    browser {
-        background-color: transparent !important;
-    }
-}
+  :root:not([zen-compact-mode="true"]) #zen-tabbox-wrapper {
+    border: none !important;
+  }
+
+  :root:not([zen-compact-mode="true"]) #zen-tabbox-wrapper::before {
+    box-shadow: none !important;
+  }
 
 /* ====== PREVIOUS/NEXT ANIMATION ====== */
 
