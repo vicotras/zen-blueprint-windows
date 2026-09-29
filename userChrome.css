@@ -1,4 +1,4 @@
-/* Wireframe Theme for Zen Browser */
+/* Blackprint 1.1 for Zen Browser */
 /* Import modular CSS files */
 
 @import url("modules/variables.css");
@@ -13,11 +13,7 @@
 @import url("modules/status-panel.css");
 @import url("modules/font.css");
 @import url("modules/media.css");
-@import url("modules/blank-page.css");
-@import url("modules/floating-urlbar.css");
-@import url("modules/normal-urlbar.css");
 @import url("modules/pinned-extensions.css");
-@import url("modules/browser.css");
 
 /* === URLBAR HOVER / TEXT OVERRIDES === */
 
