@@ -190,6 +190,16 @@
   transform: translateX(22px) !important;
 }
 
+/* === EXPANDED COMPACT NORMAL TAB ALIGNMENT === */
+/*
+ * Keep the right edge where it is and bring only the left edge inward.
+ * This matches the current Zen normal-tabs flex section.
+ */
+:root[zen-compact-mode="true"][zen-sidebar-expanded="true"] #zen-workspace-normal-tabs-section {
+  margin-left: 6px !important;
+  width: calc(100% - 6px) !important;
+}
+
 /* === EXPANDED COMPACT TAB INSET === */
 /*
  * Center the entire tab strip inside the expanded toolbox.
