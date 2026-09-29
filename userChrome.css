@@ -2,6 +2,7 @@
 /* Import modular CSS files */
 
 @import url("modules/variables.css");
+@import url("modules/zen-icons.css");
 @import url("modules/animations.css");
 @import url("modules/panel.css");
 @import url("modules/sidebar.css");
