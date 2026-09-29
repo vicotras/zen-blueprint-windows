@@ -218,6 +218,19 @@
   border-radius: var(--na-user-border-radius) !important;
 }
 
+/* === EXPANDED COMPACT WEBVIEW BORDER === */
+/*
+ * Nudge the sidebar/webview boundary 4px toward the webview.
+ * This leaves the tab geometry alone and only moves the visible splitter.
+ */
+:root[zen-compact-mode="true"][zen-sidebar-expanded="true"]:not([zen-right-side]) #zen-sidebar-splitter {
+  transform: translateX(-4px) !important;
+}
+
+:root[zen-compact-mode="true"][zen-sidebar-expanded="true"][zen-right-side] #zen-sidebar-splitter {
+  transform: translateX(4px) !important;
+}
+
 /* === SIDEBAR CONTENT === */
 
 #titlebar {
