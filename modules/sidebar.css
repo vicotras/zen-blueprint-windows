@@ -193,6 +193,21 @@
 
 :root[zen-compact-mode="true"][zen-sidebar-expanded="true"] #tabbrowser-tabs .tabbrowser-tab {
   margin-inline: 0 !important;
+  padding-inline: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+:root[zen-compact-mode="true"][zen-sidebar-expanded="true"] #tabbrowser-tabs .tabbrowser-tab > .tab-stack {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+:root[zen-compact-mode="true"][zen-sidebar-expanded="true"] #tabbrowser-tabs .tabbrowser-tab > .tab-stack > .tab-content {
+  width: 100% !important;
+  max-width: none !important;
+  box-sizing: border-box !important;
+  margin-inline: 0 !important;
 }
 
 /* === EXPANDED COMPACT SIDEBAR POSITION === */
