@@ -1,8 +1,8 @@
-# Blueprint 2.0
+# Blackprint 1.1
 
 **A Windows-focused customization mod for Zen Browser.**
 
-Blueprint 2.0 adds extensive visual customization to Zen Browser, with an emphasis on clean geometric UI, adjustable curvature, animations, backgrounds, and Windows-friendly styling.
+Blackprint 1.1 adds extensive visual customization to Zen Browser, with an emphasis on clean geometric UI, adjustable curvature, animations, backgrounds, and Windows-friendly styling.
 
 ## Features
 
@@ -21,9 +21,9 @@ Blueprint 2.0 adds extensive visual customization to Zen Browser, with an emphas
 Install the mod through **Sine**.
 
 1. Install Sine.
-2. Search for **Blueprint 2.0**.
+2. Search for **Blackprint 1.1**.
 3. Install and enable the mod.
-4. Open the Blueprint 2.0 settings panel to customize it.
+4. Open the Blackprint 1.1 settings panel to customize it.
 
 You can also add the repository manually:
 
@@ -41,4 +41,4 @@ For fully squared window corners on Windows 10/11, **MicaForEveryone** can be us
 
 ---
 
-**Blueprint 2.0 — a customizable Windows-focused Zen Browser theme.**
+**Blackprint 1.1 — a customizable Windows-focused Zen Browser theme.**
