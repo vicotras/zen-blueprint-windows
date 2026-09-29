@@ -45,14 +45,17 @@
   bottom: auto !important;
 }
 
-/* === MICA: REMOVE OPAQUE URLBAR BACKGROUND === */
-/* Keep the normal/closed URL bar transparent so Mica can show through. */
+/* === REMOVE NORMAL URLBAR BACKGROUND === */
+/* The URL bar itself should not appear as a separate pill/bar. */
 #urlbar:not([open]),
 #urlbar:not([open]) > .urlbar-background,
-#urlbar:not([open]) > .urlbar-input-container {
-  background: rgba(0, 0, 0, 0.28) !important;
+#urlbar:not([open]) > .urlbar-input-container,
+#urlbar-container {
+  background: transparent !important;
+  background-color: transparent !important;
   background-image: none !important;
   box-shadow: none !important;
+  border: none !important;
   -moz-appearance: none !important;
   appearance: none !important;
 }
