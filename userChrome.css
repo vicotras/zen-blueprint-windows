@@ -45,17 +45,11 @@
   bottom: auto !important;
 }
 
-/* === DARK TRANSLUCENT URLBAR PILL === */
-/* Keep the pill; make only its surface translucent and darker. */
+/* === SLIGHTLY TRANSLUCENT CLOSED URLBAR PILL === */
+/* Keeps the pill while allowing a little of the Mica/background to show through. */
 #urlbar:not([open]) > .urlbar-background {
-  background: rgba(0, 0, 0, 0.62) !important;
-  background-color: rgba(0, 0, 0, 0.62) !important;
+  background: rgba(0, 0, 0, 0.45) !important;
+  background-color: rgba(0, 0, 0, 0.45) !important;
   background-image: none !important;
   box-shadow: none !important;
-}
-
-/* Let the browser/titlebar surface show through instead of adding another solid strip. */
-#titlebar {
-  background: transparent !important;
-  background-color: transparent !important;
 }
