@@ -182,12 +182,17 @@
 
 /* === EXPANDED COMPACT TAB INSET === */
 /*
- * Keep the visible tab cards centered inside the expanded sidebar.
- * Zen can give the tab strip asymmetric internal space during compact-mode
- * expansion, so set the visual tab inset explicitly on both sides.
+ * Center the entire tab strip inside the expanded toolbox.
+ * Apply the inset to the tab strip itself so its left and right edges
+ * are identical; do not use margins on individual tab backgrounds.
  */
-:root[zen-compact-mode="true"][zen-sidebar-expanded="true"] #tabbrowser-tabs .tab-background {
-  margin-inline: 16px !important;
+:root[zen-compact-mode="true"][zen-sidebar-expanded="true"] #tabbrowser-tabs {
+  padding-inline: 16px !important;
+  box-sizing: border-box !important;
+}
+
+:root[zen-compact-mode="true"][zen-sidebar-expanded="true"] #tabbrowser-tabs .tabbrowser-tab {
+  margin-inline: 0 !important;
 }
 
 /* === EXPANDED COMPACT SIDEBAR POSITION === */
