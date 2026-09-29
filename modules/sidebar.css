@@ -189,6 +189,11 @@
   transform: translateY(30px) !important;
 }
 
+/* Match the top inset of the collapsed and expanded compact sidebar states. */
+:root[zen-compact-mode="true"]:not([zen-sidebar-expanded="true"]) #navigator-toolbox {
+  transform: translateY(4px) !important;
+}
+
 :root[zen-compact-mode="true"] #titlebar {
   padding: 10px !important;
   border-radius: var(--na-user-border-radius) !important;
