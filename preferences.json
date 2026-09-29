@@ -49,7 +49,7 @@
   {
     "type": "checkbox",
     "property": "wireframe.floating-compact-sidebar.enabled",
-    "label": "Enable floating compact sidebar",
+    "label": "Float expanded compact sidebar",
     "value": "boolean",
     "defaultValue": true
   },
@@ -70,14 +70,14 @@
   {
     "type": "checkbox",
     "property": "wireframe.nogaps.enabled",
-    "label": "Enable no-gap single toolbar",
+    "label": "Enable no-gap layout",
     "value": "boolean",
     "defaultValue": false
   },
   {
     "type": "checkbox",
     "property": "wireframe.nogaps.border.enabled",
-    "label": "Show splitter for no-gap mode",
+    "label": "Show splitter in no-gap mode",
     "value": "boolean",
     "defaultValue": false
   },
@@ -143,8 +143,14 @@
     "value": "string",
     "defaultValue": "border",
     "options": [
-      {"value": "border", "label": "Border"},
-      {"value": "background", "label": "Background"}
+      {
+        "value": "border",
+        "label": "Border"
+      },
+      {
+        "value": "background",
+        "label": "Background"
+      }
     ]
   },
   {
@@ -154,9 +160,18 @@
     "value": "string",
     "defaultValue": "both",
     "options": [
-      {"value": "loadbar", "label": "Loading Bar"},
-      {"value": "tab-bg-loading", "label": "Tab Background Progress Bar"},
-      {"value": "both", "label": "Both"}
+      {
+        "value": "loadbar",
+        "label": "Loading Bar"
+      },
+      {
+        "value": "tab-bg-loading",
+        "label": "Tab Background Progress Bar"
+      },
+      {
+        "value": "both",
+        "label": "Both"
+      }
     ]
   },
   {
@@ -166,13 +181,34 @@
     "value": "string",
     "defaultValue": "Vertical Veil",
     "options": [
-      {"value": "Vertical Veil", "label": "Vertical Veil"},
-      {"value": "Clean Sever", "label": "Clean Sever"},
-      {"value": "Blurry Dreams", "label": "Blurry Dreams"},
-      {"value": "Prism Shatter", "label": "Prism Shatter"},
-      {"value": "Hard Cut", "label": "Hard Cut"},
-      {"value": "Monolith Slide", "label": "Monolith Slide"},
-      {"value": "Film Dissolve", "label": "Film Dissolve"}
+      {
+        "value": "Vertical Veil",
+        "label": "Vertical Veil"
+      },
+      {
+        "value": "Clean Sever",
+        "label": "Clean Sever"
+      },
+      {
+        "value": "Blurry Dreams",
+        "label": "Blurry Dreams"
+      },
+      {
+        "value": "Prism Shatter",
+        "label": "Prism Shatter"
+      },
+      {
+        "value": "Hard Cut",
+        "label": "Hard Cut"
+      },
+      {
+        "value": "Monolith Slide",
+        "label": "Monolith Slide"
+      },
+      {
+        "value": "Film Dissolve",
+        "label": "Film Dissolve"
+      }
     ]
   },
   {
@@ -188,13 +224,34 @@
     "value": "string",
     "defaultValue": "Bricolage",
     "options": [
-      {"value": "SF-Pro", "label": "SF-Pro"},
-      {"value": "Bricolage", "label": "Bricolage Grotesque"},
-      {"value": "Monocraft", "label": "Monocraft"},
-      {"value": "GeistMono", "label": "Geist Mono"},
-      {"value": "JetBrainsMono", "label": "JetBrains Mono"},
-      {"value": "SUSE", "label": "SUSE"},
-      {"value": "SUSEMono", "label": "SUSE Mono"}
+      {
+        "value": "SF-Pro",
+        "label": "SF-Pro"
+      },
+      {
+        "value": "Bricolage",
+        "label": "Bricolage Grotesque"
+      },
+      {
+        "value": "Monocraft",
+        "label": "Monocraft"
+      },
+      {
+        "value": "GeistMono",
+        "label": "Geist Mono"
+      },
+      {
+        "value": "JetBrainsMono",
+        "label": "JetBrains Mono"
+      },
+      {
+        "value": "SUSE",
+        "label": "SUSE"
+      },
+      {
+        "value": "SUSEMono",
+        "label": "SUSE Mono"
+      }
     ]
   },
   {
@@ -232,11 +289,26 @@
     "value": "number",
     "default": 0,
     "options": [
-      {"value": 0, "label": "0px"},
-      {"value": 4, "label": "4px"},
-      {"value": 6, "label": "6px"},
-      {"value": 8, "label": "8px"},
-      {"value": 10, "label": "10px"}
+      {
+        "value": 0,
+        "label": "0px"
+      },
+      {
+        "value": 4,
+        "label": "4px"
+      },
+      {
+        "value": 6,
+        "label": "6px"
+      },
+      {
+        "value": 8,
+        "label": "8px"
+      },
+      {
+        "value": 10,
+        "label": "10px"
+      }
     ]
   },
   {
