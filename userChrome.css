@@ -17,7 +17,7 @@
 
 /* === URLBAR HOVER / TEXT OVERRIDES === */
 
-/* Disable Wireframe hover animations on URL-bar results */
+/* Disable URL-bar result hover animations */
 #urlbar .urlbarView-row:hover,
 #urlbar .urlbarView-row:hover .urlbarView-title,
 #urlbar .search-one-offs .searchbar-engine-one-off-item:hover hbox {
