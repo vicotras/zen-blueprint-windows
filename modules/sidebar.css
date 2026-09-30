@@ -172,7 +172,7 @@
 /* === EXPANDED COMPACT SIDEBAR POSITION === */
 /* Keep the expanded compact sidebar lower without changing its geometry. */
 :root[zen-compact-mode="true"][zen-sidebar-expanded="true"] #navigator-toolbox {
-  transform: translateY(130px) !important;
+  transform: translateY(60px) !important;
 }
 
 /* === SIDEBAR CONTENT === */
