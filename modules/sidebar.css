@@ -162,73 +162,11 @@
   }
 }
 
-/* === FLOATING COMPACT SIDEBAR === */
-@media (-moz-pref("wireframe.floating-compact-sidebar.enabled")) {
-  /*
-   * Do not reposition #navigator-toolbox here.
-   * Zen's compact-mode controller owns its hover/expand geometry.
-   * Repositioning the toolbox with position:absolute causes the native
-   * hover surface/popups to detach from the sidebar and produces the
-   * black floating slab seen during hover.
-   */
-  :root[zen-compact-mode="true"][zen-sidebar-expanded="true"] #navigator-toolbox {
-    position: relative !important;
-    z-index: auto !important;
-    top: auto !important;
-    bottom: auto !important;
-    height: auto !important;
-  }
-}
-
-/* === EXPANDED COMPACT NORMAL TAB ALIGNMENT === */
-/*
- * Current Zen puts normal tabs inside .zen-workspace-normal-tabs-section.
- * The section itself has native horizontal padding, so move the whole
- * section inward while reducing its width by the same amount. This keeps
- * the right edge fixed instead of merely moving the tab contents.
- */
-:root[zen-compact-mode="true"][zen-sidebar-expanded="true"] .zen-workspace-normal-tabs-section {
-  box-sizing: border-box !important;
-  min-width: 0 !important;
-  width: calc(100% - 10px) !important;
-  transform: translateX(10px) !important;
-}
-
-/* Mirror the same inset when the compact sidebar is on the right. */
-:root[zen-compact-mode="true"][zen-sidebar-expanded="true"][zen-right-side] .zen-workspace-normal-tabs-section {
-  transform: translateX(-10px) !important;
-}
-
-/* === EXPANDED COMPACT SIDEBAR POSITION === */
-/*
- * The visible floating panel is the navigator toolbox itself.
- * Move the whole toolbox, not #titlebar.
- */
-:root[zen-compact-mode="true"][zen-sidebar-expanded="true"] #navigator-toolbox {
-  transform: translateY(30px) !important;
-}
-
-/* Match the top inset of the collapsed and expanded compact sidebar states. */
-:root[zen-compact-mode="true"]:not([zen-sidebar-expanded="true"]) #navigator-toolbox {
-  transform: translateY(4px) !important;
-}
+/* === COLLAPSED COMPACT === */
 
 :root[zen-compact-mode="true"] #titlebar {
   padding: 10px !important;
   border-radius: var(--na-user-border-radius) !important;
-}
-
-/* === EXPANDED COMPACT WEBVIEW BORDER === */
-/*
- * Nudge the sidebar/webview boundary 4px toward the webview.
- * This leaves the tab geometry alone and only moves the visible splitter.
- */
-:root[zen-compact-mode="true"][zen-sidebar-expanded="true"]:not([zen-right-side]) #zen-sidebar-splitter {
-  transform: translateX(-4px) !important;
-}
-
-:root[zen-compact-mode="true"][zen-sidebar-expanded="true"][zen-right-side] #zen-sidebar-splitter {
-  transform: translateX(4px) !important;
 }
 
 /* === SIDEBAR CONTENT === */
