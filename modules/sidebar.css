@@ -169,6 +169,12 @@
   border-radius: var(--na-user-border-radius) !important;
 }
 
+/* === EXPANDED COMPACT SIDEBAR POSITION === */
+/* Keep the expanded compact sidebar lower without changing its geometry. */
+:root[zen-compact-mode="true"][zen-sidebar-expanded="true"] #navigator-toolbox {
+  transform: translateY(130px) !important;
+}
+
 /* === SIDEBAR CONTENT === */
 
 #titlebar {
