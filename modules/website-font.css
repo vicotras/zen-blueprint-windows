@@ -1,0 +1,66 @@
+/*
+ * Website font override
+ *
+ * Forces SF Pro Text on normal website text while leaving
+ * website icon/font glyph elements alone.
+ *
+ * Gemini is intentionally excluded because its UI depends on
+ * its own web fonts.
+ */
+
+@-moz-document regexp("^https?://(?!gemini\\.google\\.com(?:/|$)).*") {
+    :root,
+    body {
+        font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, sans-serif !important;
+    }
+
+    body,
+    p,
+    a,
+    button,
+    input,
+    textarea,
+    select,
+    option,
+    label,
+    li,
+    td,
+    th,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    article,
+    section,
+    main,
+    header,
+    footer,
+    nav,
+    summary,
+    details,
+    figcaption,
+    blockquote,
+    pre {
+        font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, sans-serif !important;
+    }
+
+    /*
+     * Preserve common icon/glyph fonts. These selectors intentionally
+     * override the general text rules above.
+     */
+    [class*="icon" i],
+    [class*="material" i],
+    [class*="glyph" i],
+    [class*="symbol" i],
+    [class*="codicon" i],
+    [class*="fa-" i],
+    [class*="fontawesome" i],
+    [data-icon],
+    [data-lucide],
+    svg,
+    svg * {
+        font-family: inherit;
+    }
+}
