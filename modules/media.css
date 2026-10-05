@@ -1,8 +1,10 @@
 /* MEDIA CONTROLS */
 #zen-media-controls-toolbar>toolbaritem {
-    backdrop-filter: saturate(1) contrast(0) blur(10px) !important;
-    background-color: var(--zen-colors-secondary) !important;
-    border-color: var(--na-color-border) !important;
+    backdrop-filter: none !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border-color: transparent !important;
     border-width: 2px !important;
     border-style: solid !important;
     border-radius: var(--na-tab-border-radius) !important;
