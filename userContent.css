@@ -1,3 +1,5 @@
+@import url("modules/website-font.css");
+
 @-moz-document url("about:privatebrowsing") {
     @media (prefers-color-scheme: light) {
         :root {
