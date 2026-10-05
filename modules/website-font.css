@@ -45,22 +45,3 @@
     pre {
         font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, sans-serif !important;
     }
-
-    /*
-     * Preserve common icon/glyph fonts. These selectors intentionally
-     * override the general text rules above.
-     */
-    [class*="icon" i],
-    [class*="material" i],
-    [class*="glyph" i],
-    [class*="symbol" i],
-    [class*="codicon" i],
-    [class*="fa-" i],
-    [class*="fontawesome" i],
-    [data-icon],
-    [data-lucide],
-    svg,
-    svg * {
-        font-family: inherit;
-    }
-}
