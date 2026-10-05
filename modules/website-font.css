@@ -1,15 +1,16 @@
 /*
  * Global website font
  *
- * Uses the same bundled Bricolage font as the Blackprint browser UI.
+ * Uses the local Bricolage font bundled with Blackprint.
  * Gemini is excluded because its UI requires its own web fonts.
  */
 
 @font-face {
     font-family: "Bricolage";
-    src: url("https://github.com/SehajveerSingh2005/zen-wireframe-2.0/raw/refs/heads/main/fonts/BricolageGrotesque-Regular.ttf");
+    src: url("fonts/BricolageGrotesque-Regular.ttf") format("truetype");
     font-style: normal;
     font-weight: 100 900;
+    font-display: swap;
 }
 
 /* Every normal website except Gemini */
@@ -17,6 +18,6 @@
     html,
     body,
     body * {
-        font-family: "Bricolage" !important;
+        font-family: "Bricolage", sans-serif !important;
     }
 }
