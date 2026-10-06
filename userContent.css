@@ -7,23 +7,7 @@
     font-display: swap;
 }
 
-/* Use Bricolage on every website except Gemini.
-   Keep Firefox's "Allow pages to choose their own fonts" ENABLED. */
-@-moz-document regexp("^https?://(?!gemini\.google\.com(?:/|$)).*") {
-    * {
-        font-family: "Blackprint Bricolage" !important;
-    }
-}
-
-/* === GLOBAL WEBSITE FONT === */
-@font-face {
-    font-family: "Blackprint Bricolage";
-    src: url("fonts/BricolageGrotesque-Regular.ttf") format("truetype");
-    font-style: normal;
-    font-weight: 100 900;
-    font-display: swap;
-}
-
+/* Use Bricolage on every website except Gemini. */
 @-moz-document regexp("^https?://(?!gemini\\.google\\.com(?:/|$)).*") {
     html,
     body,
@@ -35,8 +19,6 @@
         font-family: "Blackprint Bricolage" !important;
     }
 }
-
-@import url("modules/website-font.css");
 
 @-moz-document url("about:privatebrowsing") {
     @media (prefers-color-scheme: light) {
@@ -219,3 +201,4 @@
         }
     }
 }*/
+
