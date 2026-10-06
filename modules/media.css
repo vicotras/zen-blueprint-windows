@@ -1,14 +1,15 @@
 /* MEDIA CONTROLS */
 #zen-media-controls-toolbar,
-#zen-media-controls-toolbar>toolbaritem {
+#zen-media-controls-toolbar > toolbaritem {
     backdrop-filter: none !important;
     background: transparent !important;
     background-color: transparent !important;
     background-image: none !important;
-    border: 0 !important;
-    outline: 0 !important;
+    border: none !important;
+    outline: none !important;
     box-shadow: none !important;
-    border-radius: var(--na-tab-border-radius) !important;
+    border-radius: 0 !important;
+    appearance: none !important;
     margin-bottom: 14px !important; /* Remove if workspace nav is at top */
 }
 
