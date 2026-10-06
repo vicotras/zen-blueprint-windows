@@ -1,15 +1,12 @@
 /* MEDIA CONTROLS */
-#zen-media-controls-toolbar,
-#zen-media-controls-toolbar > toolbaritem {
-    backdrop-filter: none !important;
-    background: transparent !important;
-    background-color: transparent !important;
-    background-image: none !important;
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
-    border-radius: 0 !important;
-    appearance: none !important;
+#zen-media-controls-toolbar>toolbaritem {
+    backdrop-filter: saturate(1) contrast(0) blur(10px) !important;
+    background-color: var(--zen-colors-secondary) !important;
+    border-color: var(--na-color-border) !important;
+    border-width: 2px !important;
+    border-style: solid !important;
+    border-radius: var(--na-tab-border-radius) !important;
+    margin-bottom: 14px !important; /* Remove if workspace nav is at top */
     margin-bottom: 14px !important; /* Remove if workspace nav is at top */
 }
 
