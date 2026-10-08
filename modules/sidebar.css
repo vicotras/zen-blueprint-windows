@@ -525,8 +525,20 @@ zen-folder {
 }
 
 #zen-sidebar-splitter {
-  /* background: var(--na-color-bg) !important; */
+  /* Keep the splitter's layout width, but remove Zen's new visible divider. */
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
   opacity: 1 !important;
+}
+
+#zen-sidebar-splitter::before,
+#zen-sidebar-splitter::after {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 /* Pref to disable navigation buttons */
