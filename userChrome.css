@@ -2,7 +2,7 @@
 /* Import modular CSS files */
 
 @import url("modules/variables.css");
-@import url("modules/zen-icons.css");
+/* Zen's built-in toolbar icons are used for compatibility with recent Zen updates. */
 @import url("modules/animations.css");
 @import url("modules/panel.css");
 @import url("modules/sidebar.css");
