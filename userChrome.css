@@ -52,11 +52,30 @@
 }
 
 /* === BLACKPRINT CUSTOM NAVIGATION ICONS === */
-/* Keep the custom back/forward arrows without re-enabling the outdated full icon pack. */
-#back-button {
-  list-style-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.75 13L7.01274 10.2627C6.22071 9.47071 5.82469 9.07469 5.67631 8.61803C5.5458 8.21635 5.5458 7.78365 5.67631 7.38197C5.82469 6.92531 6.22071 6.52929 7.01274 5.73726L9.75 3' stroke='context-fill' stroke-opacity='context-fill-opacity' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+/* Use masks on the actual icon element so the arrows inherit the toolbar's current text/icon color. */
+#back-button .toolbarbutton-icon,
+#forward-button .toolbarbutton-icon {
+  list-style-image: none !important;
+  width: 16px !important;
+  height: 16px !important;
+  min-width: 16px !important;
+  min-height: 16px !important;
+  background-color: currentColor !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  mask-size: 16px 16px !important;
+  -webkit-mask-repeat: no-repeat !important;
+  -webkit-mask-position: center !important;
+  -webkit-mask-size: 16px 16px !important;
+  opacity: 1 !important;
 }
 
-#forward-button {
-  list-style-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.25 13L8.98726 10.2627C9.77929 9.47071 10.1753 9.07469 10.3237 8.61803C10.4542 8.21635 10.4542 7.78365 10.3237 7.38197C10.1753 6.92531 9.77929 6.52929 8.98726 5.73726L6.25 3' stroke='context-fill' stroke-opacity='context-fill-opacity' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+#back-button .toolbarbutton-icon {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M9.75 13L7.01274 10.2627C6.22071 9.47071 5.82469 9.07469 5.67631 8.61803C5.5458 8.21635 5.5458 7.78365 5.67631 7.38197C5.82469 6.92531 6.22071 6.52929 7.01274 5.73726L9.75 3' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M9.75 13L7.01274 10.2627C6.22071 9.47071 5.82469 9.07469 5.67631 8.61803C5.5458 8.21635 5.5458 7.78365 5.67631 7.38197C5.82469 6.92531 6.22071 6.52929 7.01274 5.73726L9.75 3' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+}
+
+#forward-button .toolbarbutton-icon {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M6.25 13L8.98726 10.2627C9.77929 9.47071 10.1753 9.07469 10.3237 8.61803C10.4542 8.21635 10.4542 7.78365 10.3237 7.38197C10.1753 7.92531 9.77929 7.52929 8.98726 6.73726L6.25 3' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M6.25 13L8.98726 10.2627C9.77929 9.47071 10.1753 9.07469 10.3237 8.61803C10.4542 8.21635 10.4542 7.78365 10.3237 7.38197C0.17531 7.52929 8.98726 6.73726 6.25 3' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
 }
