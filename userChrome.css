@@ -201,3 +201,10 @@
   opacity: 1 !important;
 }
 
+/* === NAVIGATION BUTTON SPACING === */
+/* Give back, forward, and reload a little more breathing room. */
+#back-button,
+#forward-button,
+#reload-button {
+  margin-inline: 4px !important;
+}
