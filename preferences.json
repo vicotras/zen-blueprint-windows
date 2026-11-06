@@ -222,8 +222,12 @@
     "property": "wireframe.font",
     "label": "Font",
     "value": "string",
-    "defaultValue": "Bricolage",
+    "defaultValue": "WorkSans",
     "options": [
+      {
+        "value": "WorkSans",
+        "label": "Work Sans"
+      },
       {
         "value": "SF-Pro",
         "label": "SF-Pro"
