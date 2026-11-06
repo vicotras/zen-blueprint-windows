@@ -295,15 +295,6 @@
       transform: translateY(0) !important;
     }
   
-  /* media player shift */#zen-media-controls-toolbar{
-      transform: translateY(42px) !important;
-      transition: transform 0.15s ease !important;
-    }
-
-    #navigator-toolbox:hover #zen-media-controls-toolbar{
-      transform: translateY(0) !important;
-    }
-
 }
 
 /* ===  NEW TAB === */
