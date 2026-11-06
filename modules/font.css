@@ -1,15 +1,8 @@
 :root {
     --wireframe-font-size: unset;
-    --wireframe-font: "Work Sans";
 }
 
 /* Credits to Ferrocene */
-
-@media (-moz-pref("wireframe.font", "WorkSans")) {
-    :root {
-        --wireframe-font: "Work Sans";
-    }
-}
 
 @media (-moz-pref("wireframe.font", "SF-Pro")) {
     :root {
@@ -63,14 +56,6 @@
     :root {
         --wireframe-font: "Monocraft";
     }
-}
-
-@font-face {
-    font-family: "Work Sans";
-    src: url("https://raw.githubusercontent.com/google/fonts/main/ofl/worksans/WorkSans%5Bwght%5D.ttf") format("truetype");
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
