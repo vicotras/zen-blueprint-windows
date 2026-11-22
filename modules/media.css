@@ -8,3 +8,35 @@
     display: none !important;
   }
 }
+
+/* === BLACKPRINT SIDEBAR MINI PLAYER === */
+/* Blend Zen's native media card into Blackprint's charcoal glass surfaces. */
+#zen-media-controls-toolbar .zen-media-card {
+  background: rgba(43, 43, 47, 0.78) !important;
+  border: 1px solid rgba(255, 255, 255, 0.075) !important;
+  border-radius: 14px !important;
+  outline: none !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16) !important;
+  -moz-backdrop-filter: blur(16px) saturate(1.12);
+  backdrop-filter: blur(16px) saturate(1.12);
+}
+
+#zen-media-controls-toolbar .zen-media-card .toolbarbutton-1 {
+  color: rgba(255, 255, 255, 0.68) !important;
+  opacity: 0.78;
+  border-radius: 9px !important;
+  transition:
+    background-color 0.18s ease,
+    color 0.18s ease,
+    opacity 0.18s ease !important;
+}
+
+#zen-media-controls-toolbar .zen-media-card .toolbarbutton-1:hover {
+  color: rgba(255, 255, 255, 0.96) !important;
+  background-color: rgba(255, 255, 255, 0.09) !important;
+  opacity: 1;
+}
+
+#zen-media-controls-toolbar .zen-media-card .toolbarbutton-1:active {
+  background-color: rgba(255, 255, 255, 0.14) !important;
+}
