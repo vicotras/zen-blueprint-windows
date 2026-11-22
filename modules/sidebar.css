@@ -170,7 +170,7 @@
 }
 
 /* === REDUCED EXPANDED SIDEBAR MINIMUM === */
-/* Zen 1.23+ clamps expanded sidebars to 150px; Blackprint keeps the old 140px floor. */
+/* Keep Blackprint's 140px expanded-sidebar floor against Zen's toolbox minimum. */
 :root[zen-sidebar-expanded="true"] #navigator-toolbox {
   min-width: 140px !important;
 }
